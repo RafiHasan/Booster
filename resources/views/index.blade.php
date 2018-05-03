@@ -26,78 +26,7 @@
 
 </style>
 			
-			<div class="container-fluid inner mt-5 hidden-sm-up" style="height: 560px;">
-											
-
-								<div>
-
-								<div class="card ">
-	<div class="ribbon-wrapper">
-		<div class="ribbon-front">
-			Project of the Day
-		</div>
-		<div class="ribbon-edge-topleft"></div>
-		<div class="ribbon-edge-topright"></div>
-		<div class="ribbon-edge-bottomleft"></div>
-		<div class="ribbon-edge-bottomright"></div>
-		<div class="ribbon-back-left"></div>
-		<div class="ribbon-back-right"></div>
-	</div>
-									<a href="" class="thumbnaidl"><img class="img-fluid" src="https://unsplash.it/576/210?image=1081" /></a>
-
-									<div class="card-block">
-									
-										<div class="row ">
-												<div class="col-sm-6">
-										
-													<!--<a href="" class="thumbnail"><img class="img-fluid img-thumbnail" src="images/eat-1892990_1920.jpg" /></a>-->
-
-												</div>							
-												<div class="col-sm-6">
-										
-
-													<h4 class="display-8"><a href="/project">I'm making a Potato salad</a></h4>
-													<p class="text-muted">By <strong><a href="/project" class="text-muted">Otto Payne</a></strong> in <strong>London, UK</strong></p>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vulputate et odio eu tempus. Donec turpis justo.Suspendisse vulputate et odio eu tempus. Suspendisse vulputate et odio eu tempus.  </p>
-											
-<br />
-													<div class="progress">
-  <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<p>20% funded</p>
-												</div>
-										</div>
-									</div>
-
-									<div class="card-footer text-muted mt-4" style="background: #f7f8fa">
-										<div class="row ">
-												<div class="col-sm-12">
-													<div class="row ">
-														<div class="col">
-															<p class="mt-0 mb-0">Pledged</p>
-															<h5 class="mt-0 mb-0">৳50,000</h5>
-														</div>
-														<div class="col">
-															<p class="mt-0 mb-0">Backers</p>
-															<h5 class="mt-0 mb-0">250</h5>
-														</div>
-														<div class="col">
-															<p class="mt-0 mb-0">Days Left</p>
-															<h5 class="mt-0 mb-0">27</h5>
-														</div>
-														<div class="col">
-															<p class="mt-0 mb-0">Funding goal</p>
-															<h5 class="mt-0 mb-0">৳175,000</h5>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-								</div>	
-								</div>			
-
-			</div>
-
+			
 
 			<div class="container-fluid inner hidden-xs-down" style="height: 560px;">
 <br />

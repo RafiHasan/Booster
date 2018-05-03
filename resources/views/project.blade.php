@@ -463,7 +463,7 @@ var i;
 					<div class="row " >
 						<div class="col-sm-12" >
 
-							<h4>Project by</h4>
+							<h4>Project by:</h4>
 
 							<div class="row " >
 								<div class="col-sm-5">
@@ -476,8 +476,8 @@ var i;
 									</a>
 									
 								</div>
-								<div class="col-sm-6">
-									<h3 class="mb-0"><strong>{{$user[0]->first_name}}</strong></h3>
+								<div class="col-sm-7">
+									<h3 class="mb-0" style="overflow:hidden;" ><strong >{{$user[0]->first_name}}</strong></h3>
 									<p class="mt-0 mb-0">{{$user[0]->location}}</p>
 									<p class="mt-0 mb-0">{{$count = DB::table('projects')->select('id','user_id')->where(['user_id'=>$user[0]->id])->get()->count()}} Project</p>
 									
@@ -503,7 +503,7 @@ var i;
 								@endforeach
 							</div>
 
-							<a href="" class="btn btn-lg btn-primary btn-block">Back this project</a><br />
+							<a href="/pay" class="btn btn-lg btn-primary btn-block">Back this project</a><br />
 
 						</div>
 

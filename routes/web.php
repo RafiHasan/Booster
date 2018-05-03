@@ -179,7 +179,15 @@ Route::post('/showProfile', ['as'=>'showProfile','uses'=>'HomeController@showPro
 
 Route::post('/addCard','HomeController@addCard');
 
+Route::get('/pay','paymentcontroler@pay');
+
 Route::get('/about-us', function () {
 
     return view('about');
+})->name('about');
+
+
+Route::get('/form', function () {
+
+    return view('simple_form-submit');
 });

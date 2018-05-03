@@ -18,7 +18,7 @@
         <section class="toggle_box_content current" id="bio">
           <div class="row" style="padding: 30px;margin-top: 20px;">
             <div class="col col-7 " >
-              <div id="hidden_profile_biography" class="readability">
+              <div id="hidden_profile_biography" class="readability" style="word-wrap: break-word;">
                 <p>We are a team of engineers and designers motivated to making life more convenient. We believe that hassle-free, effective monitoring of your home shouldn’t be a luxury and, more importantly, should be a service you trust. That’s why eufy EverCam was incubated with Anker Innovations to offer unrivaled battery life, topped with other key features from existing security cameras and cutting-edge functions that enhance the usage experience. We’ve lined up the best suppliers and manufactures we...</p>
               </div>
 

@@ -5,7 +5,7 @@
 <li><a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('id01').style.display='block';document.getElementById('id01').style.overflow='auto';showProfile({{Auth::user()->id}});" href="">My Account</a></li>
 
 
-<li><a class="dropdown-item" href="{{url('/myProjects')}}">My Projects</a></li>
+<li><a class="dropdown-item" href="{{url('/myaccount')}}">My Projects</a></li>
 
 <li><a class="dropdown-item" href="{{ route('logout') }}"
     onclick="event.preventDefault();
