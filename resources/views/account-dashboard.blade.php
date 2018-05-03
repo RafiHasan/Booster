@@ -11,94 +11,14 @@
 
   <!-- favicon -->
 
-  <link rel="icon" 
-      type="image/png" 
-      href="https://scontent.fdac6-1.fna.fbcdn.net/v/t35.0-12/23698614_1340578692737598_1074966544_o.png?_nc_cat=0&oh=aeba2a938682be4c93c51c2189d7506f&oe=5ACC7135" />
-
-  
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="canonical" href="/account-dashboard.html">
-  <link rel="alternate" type="application/rss+xml" title="CrowdFundr - by ExpressPixel" href="/feed.xml">
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-  <script src="javascripts/scrollPosStyler.js"></script>
-  <!-- JavaScript -->
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.min.js" ></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.4/vue.min.js"></script>
-
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
-
-  <link rel="stylesheet" href="css/main.css">
+  @include('Format.css_js_file')
 
 
 
 </head>
   <body>
 
-    <nav class="navbar navbar-toggleable-sm navbar-light bg-primary fixed-top"  id="navbar" v-cloak >
-  <div class="container top-nav" v-if="!search">
-
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-</button>
-  <a class="navbar-brand" href="index.html">BOOSTER</a>
-
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto" >
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="explore.html">Explore</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="edit.html">Start a project</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about.html">About us</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav" >
-      <li class="nav-item hidden-sm-down">
-        <a class="nav-link" href="#" v-on:click.prevent="showSearchBar"><i class="fa fa-search" aria-hidden="true"></i></a>
-      </li>
-      <li class="nav-item hidden-sm-up">
-        <a class="nav-link" href="#" v-on:click.prevent="showSearchBar">Search</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" data-toggle="modal" data-target=".login-modal-lg">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"href="#" data-toggle="modal" data-target=".signup-modal-lg">Sign up</a>
-      </li>
-    </ul>
-    <form class="form-inline" style="display: none">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-    </div>
-
-    <div class="container" v-else>
-  <div class="input-group search-bar">
-  <span class="input-group-addon"><i class="icon-magnifier icons"></i></span>
-  <input type="text" class="form-control form-control-lg" placeholder="Search">
-  <span class="input-group-addon" ><a href="" class="text-muted" v-on:click.prevent="hideSearchBar"><i class="icon-close icons"></i></a></span>
-</div>
-    </div>
-
-</nav>
+    @include('Format.header')
 
     <br />
 <br />
@@ -113,37 +33,36 @@
     
       
       
-
-      <li class="nav-item active">
-        <a class="nav-link active" href="account-dashboard.html">Account</a>
+<li class="nav-item active">
+        <a class="nav-link active" href="{{url('/account-dashboard')}}">Account</a>
       </li>
     
       
       
 
       <li class="nav-item ">
-        <a class="nav-link " href="account-profile.html">My profile</a>
+        <a class="nav-link " href="{{url('/account-profile')}}">My profile</a>
+      </li>
+    
+      
+      
+
+      <li class="nav-item">
+        <a class="nav-link " href="{{url('/account-notifications')}}">Notifications</a>
+      </li>
+    
+      
+      
+
+      <li class="nav-item">
+        <a class="nav-link " href="{{url('/account-payment')}}">Payment methods</a>
       </li>
     
       
       
 
       <li class="nav-item ">
-        <a class="nav-link " href="account-notifications.html">Notifications</a>
-      </li>
-    
-      
-      
-
-      <li class="nav-item ">
-        <a class="nav-link " href="account-payment.html">Payment methods</a>
-      </li>
-    
-      
-      
-
-      <li class="nav-item ">
-        <a class="nav-link " href="start.html">Create new ad</a>
+        <a class="nav-link " href="{{url('/start-project')}}">Create new project</a>
       </li>
     
 <!--
@@ -189,7 +108,7 @@
         
         
     </button>
-    <div class="dropdown-menu"  style="width: 100%" aria-labelledby="btnGroupDrop1">
+    <!-- <div class="dropdown-menu"  style="width: 100%" aria-labelledby="btnGroupDrop1">
         
         
         
@@ -226,7 +145,7 @@
             <a class="nav-link " href="start.html">Create new ad</a>
         </li>
         
-    </div>
+    </div> -->
   </div>
 </div>
 
@@ -242,22 +161,24 @@
                             <div class="form-group row">
                                 <label for="example-text-input" class="col-3 col-md-2 col-form-label">Email</label>
                                 <div class="col-9 col-md-10">
-                                    <input class="form-control" type="email" value="firstname@example.com" id="example-text-input">
+                                    <input class="form-control" type="email" placeholder="firstname@example.com" id="example-text-input">
                                     <p class="form-text text-muted">
                                         Your name is displayed on your profile.
                                     </p>
                                 </div>
                             </div>
-                            
+                            <div class="form-group" id="passDiv">
                             <div class="form-group row">
                                 <label for="example-text-input" class="col-3 col-md-2 col-form-label">Password</label>
-                                <div class="col-9 col-md-10">
-                                    <input class="form-control" type="password" value="" id="example-text-input">
-                                    <p class="form-text text-muted">
-                                        Must be 8 characters long
-                                    </p>
+                                <div id="changePassDiv" class="col-9 col-md-10">
+                                    <button id="changepass" onclick="event.preventDefault(); changePass();" role = "button" class="btn btn-primary btn-md"> Change Password </button>
                                 </div>
                             </div>
+                            <br />
+                            
+                          </div>
+
+                           
                             
                             <div class="form-group row">
                                 <label for="example-text-input" class="col-3 col-md-2 col-form-label">Current Password</label>
@@ -296,6 +217,26 @@
 
                         </div>
                     </div>
+
+                     <script>
+                              function changePass(){
+                                var passField = document.getElementById('changePassDiv');
+                                var passDiv = document.getElementById('passDiv');
+                                var inputPass = '<input class="form-control" type="password" value="" id="newPass">';
+
+                                passField.innerHTML = inputPass;
+
+                                var newDiv = document.createElement('div');
+                                newDiv.className = 'form-group row';
+                                var label = '<label for="confirmPass" class="col-3 col-md-2 col-form-label">Confirm Password</label>';
+                                var confirmPass = '<div class="col-9 col-md-10"><input class="form-control" type="password" value="" id="confirmPass" name="confirmPass"></div>';
+                                newDiv.innerHTML = label + confirmPass;
+                                console.log(passField.innerHTML);
+                                console.log(newDiv.innerHTML);
+                                passDiv.append(newDiv);
+
+                              }
+                            </script>
 <hr />
 
   </fieldset>
@@ -386,18 +327,18 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 
 
-	<script>
-		var eventTime = moment().add(8, 'hours'); // Timestamp - Sun, 21 Apr 2013 13:00:00 GMT
-		var currentTime = 1366547400; // Timestamp - Sun, 21 Apr 2013 12:30:00 GMT
-		var diffTime = eventTime - currentTime;
-		var duration = moment.duration(diffTime*1000, 'milliseconds');
-		var interval = 1000;
+  <script>
+    var eventTime = moment().add(8, 'hours'); // Timestamp - Sun, 21 Apr 2013 13:00:00 GMT
+    var currentTime = 1366547400; // Timestamp - Sun, 21 Apr 2013 12:30:00 GMT
+    var diffTime = eventTime - currentTime;
+    var duration = moment.duration(diffTime*1000, 'milliseconds');
+    var interval = 1000;
 
-		setInterval(function(){
-		  duration = moment.duration(duration - interval, 'milliseconds');
-			$('#current_time').text(moment().format('MMMM Do YYYY, h:mma'));
-		}, interval);
-	</script>
+    setInterval(function(){
+      duration = moment.duration(duration - interval, 'milliseconds');
+      $('#current_time').text(moment().format('MMMM Do YYYY, h:mma'));
+    }, interval);
+  </script>
   </body>
 </html>
 
@@ -476,7 +417,7 @@
                                     <br /><br />
                                     <div class="form-group row">
                                       <div class="offset-sm-3 col-sm-6 text-center">
-                                        <a href="account-dashboard.html" class="btn btn-primary btn-block">Sign in</a>
+                                        <a href="{{url('/account-dashboard')}}" class="btn btn-primary btn-block">Sign in</a>
                                       </div>
                                     </div>
                                     <div class="form-group row">
@@ -485,10 +426,10 @@
                                       </div>
                                     </div>
                                   </form>                            
-                              </div>	 		
-                        </div>	 		
-                    </div>	 		
-                </div>	 		
+                              </div>      
+                        </div>      
+                    </div>      
+                </div>      
 
             </div>
             </div>
@@ -557,7 +498,7 @@
                     </div>
                 </div>
 
- 		
+    
 
             </div>
             </div>

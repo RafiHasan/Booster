@@ -6823,6 +6823,9 @@ ul.social-network li {
 .social-network a.icoLinkedin:hover {
   background-color: #007bb7; }
 
+  .social-network a.icoGithub:hover {
+  background-color: #BA55D3; }
+
 .social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
 .social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
   color: #fff; }

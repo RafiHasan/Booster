@@ -4,99 +4,22 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-  <title>Pricing</title>
+  <title> Booster</title>
   <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search resu...">
 
+
 <!-- favicon -->
-
-  <link rel="icon" 
-      type="image/png" 
-      href="https://scontent.fdac6-1.fna.fbcdn.net/v/t35.0-12/23698614_1340578692737598_1074966544_o.png?_nc_cat=0&oh=aeba2a938682be4c93c51c2189d7506f&oe=5ACC7135" />
+@include('Format.css_js_file')
   
   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="canonical" href="/edit-about.html">
-  <link rel="alternate" type="application/rss+xml" title="CrowdFundr - by ExpressPixel" href="/feed.xml">
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-  <script src="javascripts/scrollPosStyler.js"></script>
-  <!-- JavaScript -->
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.min.js" ></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.4/vue.min.js"></script>
-
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
-
-  <link rel="stylesheet" href="css/main.css">
 
 
 
 </head>
   <body>
-
-    <nav class="navbar navbar-toggleable-sm navbar-light bg-primary fixed-top"  id="navbar" v-cloak >
-  <div class="container top-nav" v-if="!search">
-
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-</button>
-  <a class="navbar-brand" href="index.html">BOOSTER</a>
-
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto" >
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="explore.html">Explore</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="edit.html">Start a project</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about.html">About us</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav" >
-      <li class="nav-item hidden-sm-down">
-        <a class="nav-link" href="#" v-on:click.prevent="showSearchBar"><i class="fa fa-search" aria-hidden="true"></i></a>
-      </li>
-      <li class="nav-item hidden-sm-up">
-        <a class="nav-link" href="#" v-on:click.prevent="showSearchBar">Search</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" data-toggle="modal" data-target=".login-modal-lg">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"href="#" data-toggle="modal" data-target=".signup-modal-lg">Sign up</a>
-      </li>
-    </ul>
-    <form class="form-inline" style="display: none">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-    </div>
-
-    <div class="container" v-else>
-  <div class="input-group search-bar">
-  <span class="input-group-addon"><i class="icon-magnifier icons"></i></span>
-  <input type="text" class="form-control form-control-lg" placeholder="Search">
-  <span class="input-group-addon" ><a href="" class="text-muted" v-on:click.prevent="hideSearchBar"><i class="icon-close icons"></i></a></span>
-</div>
-    </div>
-
-</nav>
+    @include('Format.header')
 
     <br />
 <br />
@@ -107,15 +30,14 @@
 
     <div class="col-sm-12">
       <ul class="breadcrumb">
-        <li><a href="edit.html">Basics</a></li>
-        <li><a href="edit-story.html">Story</a></li>
-        <!--  <li><a href="edit-perks.html">Perks</a></li> -->
-
-        <li><a style="font-weight: bold " href="edit-about.html">About you</a></li>
-        <li><a href="edit-accounts.html">Account</a></li>
-                <li><a  href="edit-updates.html">Updates</a></li>
+  <li><a href={{url('/start-project')}}>Basics</a></li>
+  <li><a href="{{url('/edit-story')}}">Story</a></li>
+<!--  <li><a href="edit-perks.html">Perks</a></li> -->
+  <li><a style="font-weight: bold" href="{{url('/edit-about')}}">About you</a></li>
+          
 
       </ul>
+
 
     </div>
 
@@ -124,7 +46,8 @@
       <h1>Tell us more about yourself</h1>
       <p>Add a bio and links to your website and social media profiles. Think of it as your creative resume.</p>
 
-      <form>
+     <form role="form" method="POST" action="{{ route('edit-about') }}" enctype="multipart/form-data">
+        {{ csrf_field() }}
 
 
         <div class="form-group light-blue">
@@ -132,13 +55,37 @@
           <div class="form-group row">
             <label for="example-text-input" class="col-3 col-form-label">Profile photo</label>
             <div class="col-9">
-              <div style="border: 1px dashed #000; background: #fff; width: 100%; display: block; padding: 20px;" class="text-center">
-                <p class="text-center">
-                  <a href=""><strong>Choose an image from your computer</strong></a>
-                </p>
-                <p>This is the main image associated with your project. Make it count!</p>
-                <p>At least <strong>1024x576 pixels</strong> • 16:9 aspect ratio</p>
+<div style="border: 1px dashed #000; background: #fff; width: 100%; display: block; padding: 10px;" class="text-center">
+
+                <img id="blah" src="#" alt="your image" />
+                <p id="dhur1" style="margin-top:  15px;">This is the main image associated with your project. Make it count!</p>    
+                <p id="dhur2">At least <strong>1024x576 pixels</strong> • 16:9 aspect ratio</p>   
+                
+                  <input type="file" class="btn btn-primary" name="fileupload2"  id="fileupload" style="color: #fff;" required>
+                
               </div>
+
+<script>
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah').attr('src', e.target.result);
+            $('#blah').attr('style','width:100%; height:80%;');
+            document.getElementById('dhur1').innerHTML = "";
+            document.getElementById('dhur2').innerHTML = "";
+
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#fileupload").change(function(){
+    readURL(this);
+});
+</script>
               <br />
               <p>Have fun – add a video! Projects with a video have a much higher chance of success. For a dose of inspiration,
                 check out the Creator Handbook. Need some help? Visit our Creator FAQ.</p>
@@ -146,30 +93,9 @@
           </div>
         </div>
 
-        <div class="form-group light-blue">
 
-          <div class="form-group row">
-            <label for="example-text-input" class="col-3 col-form-label">Prototype gallery</label>
-            <div class="col-9">
-              <p class="mt-1">Creating a physical product? Be sure to add explicit demos of working prototypes. Photos and videos are always
-                a great way to share your creative process and show backers what you’ve accomplished so far.</p>
-              <a href="" class="btn btn-primary">Edit gallery</a>
-            </div>
-          </div>
-        </div>
 
-        <div class="form-group light-blue">
 
-          <div class="form-group row">
-            <label for="example-text-input" class="col-3 col-form-label">Name</label>
-            <div class="col-9">
-
-                  <input class="form-control" type="search" value="" id="example-search-input">
-                                <p class="mt-1">Use your project description to share more about what you’re raising funds to do and how you plan to pull it
-                off. It’s up to you to make the case for your project.</p>
-            </div>
-          </div>
-        </div>
 
         <div class="form-group light-blue">
 
@@ -187,7 +113,7 @@
           <div class="form-group row">
             <label for="example-text-input" class="col-3 col-form-label">Biography</label>
             <div class="col-9">
-                  <textarea class="form-control" rows="6" type="text" value="" id="example-email-input"></textarea>
+                  <textarea class="form-control" name="biography" rows="6" type="text" value="" id="example-email-input"></textarea>
 
               <p class="mt-4">Build trust with potential backers by showing there's a real person behind the project. Your name and number of friends will be displayed.</p>
               
@@ -204,7 +130,7 @@
                 <span class="input-group-btn">
                   <button class="btn btn-secondary" type="button"><i class="fa fa-location-arrow" aria-hidden="true"></i></button>
                 </span>
-                <input type="text" class="form-control" placeholder="Search for...">
+                <input type="text" name="location" class="form-control" placeholder="Search for...">
               </div>              
             </div>
           </div>
@@ -215,7 +141,7 @@
           <div class="form-group row">
             <label for="example-text-input" class="col-3 col-form-label">Websites</label>
             <div class="col-9">
-                <input class="form-control" type="url" value="" id="example-tel-input" />
+                <input class="form-control" name="websites" type="url" value="" id="example-tel-input" />
                 <p>Some suggestions: Link to your blog, portfolio, Twitter, Instagram, etc.</p>              
             </div>
           </div>
@@ -232,10 +158,69 @@
             </div>
           </div>
         </div>        -->
+
+        <div class="form-group light-blue">
+
+          <div class="form-group row">
+            <label for="example-text-input" class="col-3 col-form-label">Contact details</label>
+            <div class="col-9">
+                                <input class="form-control" name="contact" type="email" value="test@example.com" id="example-search-input">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group light-blue">
+
+          <div class="form-group row">
+            <label for="example-text-input" class="col-3 col-form-label">Payment Source<br /></label>
+            <div class="col-9">
+                                        
+
+      <div class="row">
+      <div class="col-sm-4">
+        <!-- Large button groups (default and split) -->
+        <div  class="btn-group  btn-block">
+        <button  class="btn btn-secondary btn-lg  btn-block dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span id="selected" name="accountname" class="caret">Account Type</span></button>
+        <div class="dropdown-menu"  style="width: 100%">
+        
+          
+            <a class="dropdown-item" onclick="event.preventDefault()" href="{{url('/explore/Android')}}">Android Apps</a>
+          
+            <a class="dropdown-item" onclick="event.preventDefault()" href="{{url('/explore/Website')}}">Website</a>
+          
+            <a class="dropdown-item" onclick="event.preventDefault()" href="{{url('/explore/Research')}}">Research</a>
+          
+            
+          
+        </div>
+        </div>
+      </div>
+      <div class="col-sm-8">
+    
+      <input class="form-control" type="text" placeholder="Account number" type="email" value="" name="accountnumber" id="account">
+    
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+
+        <script>
+           $('.dropdown-menu a').click(function(){
+            $('#selected').text($(this).text());
+          });
+        </script>
+
+
+
+        
 <br />
 <br />
 <br />
-</form>
+
     </div>
 
     
@@ -311,13 +296,13 @@
 <nav class="navbar fixed-bottom navbar-light bg-faded" style="background: #fff; border-top: 1px solid #eee">
   <div class="container">
 
-    <a href="edit.html" class="btn btn-primary btn-lg float-right">Save campaign</a>
+    <input type="submit"  class="btn btn-primary btn-lg float-right" value="Save">
     <a href="edit.html" class="btn btn-link btn-lg float-right">Discard changes</a>
 
   </div>
 </nav>
 
-
+</form>
     
 
 

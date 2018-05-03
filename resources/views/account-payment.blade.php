@@ -4,100 +4,22 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
 
   <title>Settings</title>
   <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search resu...">
 
+
   <!-- favicon -->
 
-  <link rel="icon" 
-      type="image/png" 
-      href="https://scontent.fdac6-1.fna.fbcdn.net/v/t35.0-12/23698614_1340578692737598_1074966544_o.png?_nc_cat=0&oh=aeba2a938682be4c93c51c2189d7506f&oe=5ACC7135" />
-
-  
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="canonical" href="/account-payment.html">
-  <link rel="alternate" type="application/rss+xml" title="CrowdFundr - by ExpressPixel" href="/feed.xml">
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-  <script src="javascripts/scrollPosStyler.js"></script>
-  <!-- JavaScript -->
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.min.js" ></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.4/vue.min.js"></script>
-
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
-
-  <link rel="stylesheet" href="css/main.css">
+  @include('Format.css_js_file')
 
 
 
 </head>
   <body>
 
-    <nav class="navbar navbar-toggleable-sm navbar-light bg-primary fixed-top"  id="navbar" v-cloak >
-  <div class="container top-nav" v-if="!search">
-
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-</button>
-  <a class="navbar-brand" href="index.html">BOOSTER</a>
-
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto" >
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="explore.html">Explore</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="edit.html">Start a project</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about.html">About us</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav" >
-      <li class="nav-item hidden-sm-down">
-        <a class="nav-link" href="#" v-on:click.prevent="showSearchBar"><i class="fa fa-search" aria-hidden="true"></i></a>
-      </li>
-      <li class="nav-item hidden-sm-up">
-        <a class="nav-link" href="#" v-on:click.prevent="showSearchBar">Search</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" data-toggle="modal" data-target=".login-modal-lg">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"href="#" data-toggle="modal" data-target=".signup-modal-lg">Sign up</a>
-      </li>
-    </ul>
-    <form class="form-inline" style="display: none">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-    </div>
-
-    <div class="container" v-else>
-  <div class="input-group search-bar">
-  <span class="input-group-addon"><i class="icon-magnifier icons"></i></span>
-  <input type="text" class="form-control form-control-lg" placeholder="Search">
-  <span class="input-group-addon" ><a href="" class="text-muted" v-on:click.prevent="hideSearchBar"><i class="icon-close icons"></i></a></span>
-</div>
-    </div>
-
-</nav>
+    @include('Format.header')
 
     <br />
 <br />
@@ -114,35 +36,28 @@
       
 
       <li class="nav-item ">
-        <a class="nav-link " href="account-dashboard.html">Account</a>
+        <a class="nav-link " href="{{url('/account-dashboard')}}">Account</a>
       </li>
     
       
       
 
       <li class="nav-item ">
-        <a class="nav-link " href="account-profile.html">My profile</a>
+        <a class="nav-link " href="{{url('/account-profile')}}">My profile</a>
       </li>
     
       
       
 
       <li class="nav-item ">
-        <a class="nav-link " href="account-notifications.html">Notifications</a>
+        <a class="nav-link " href="{{url('/account-notifications')}}">Notifications</a>
       </li>
     
       
       
 
       <li class="nav-item active">
-        <a class="nav-link active" href="account-payment.html">Payment methods</a>
-      </li>
-    
-      
-      
-
-      <li class="nav-item ">
-        <a class="nav-link " href="start.html">Create new ad</a>
+        <a class="nav-link active" href="{{url('/account-payment')}}">Payment methods</a>
       </li>
     
 <!--
@@ -163,71 +78,7 @@
     </li>-->
 </ul>
 
-<div class="btn-group  btn-block  btn-group-justified hidden-md-up" role="group" aria-label="Button group with nested dropdown">
-  <div class="btn-group   btn-block" role="group">
-    <button id="btnGroupDrop1" type="button" class="btn btn-secondary btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        Payment methods
-        
-        
-        
-        
-        
-    </button>
-    <div class="dropdown-menu"  style="width: 100%" aria-labelledby="btnGroupDrop1">
-        
-        
-        
 
-        <li class="nav-item ">
-            <a class="nav-link " href="account-dashboard.html">Account</a>
-        </li>
-        
-        
-        
-
-        <li class="nav-item ">
-            <a class="nav-link " href="account-profile.html">My profile</a>
-        </li>
-        
-        
-        
-
-        <li class="nav-item ">
-            <a class="nav-link " href="account-notifications.html">Notifications</a>
-        </li>
-        
-        
-        
-
-        <li class="nav-item active">
-            <a class="nav-link active" href="account-payment.html">Payment methods</a>
-        </li>
-        
-        
-        
-
-        <li class="nav-item ">
-            <a class="nav-link " href="start.html">Create new ad</a>
-        </li>
-        
-    </div>
-  </div>
-</div>
 
 <br />
 <br />
@@ -244,7 +95,7 @@
                                     <p>Any payment methods you save to Booster will be listed here (securely) for your convenience. To save a card for future pledges, just click "Add a new card."</p>
                                 </div>
                                 <div class="col-sm-4 text-center">
-                                    <a href="" class="btn btn-primary">Add a new card</a>
+                                    <a href="" onclick="event.preventDefault(); document.getElementById('cardDiv').style.display='block';document.getElementById('cardDiv').style.overflow='auto'" class="btn btn-primary">Add a new card</a>
                                 </div>
                             </div>
 
@@ -254,33 +105,111 @@
   <thead class="thead-inverse">
     <tr>
       <th>#</th>
-      <th>Card number</th>
+      <th>Account Type</th>
       <th>Expiry</th>
-      <th>Type</th>
+      <th>Account Number</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>XXXX-XXXX-XXXX-2315</td>
-      <td>08-27</td>
-      <td>MasterCard</td>
+      <td id="acctype">MasterCard</td>
+      <td id="accdate">08-27</td>
+      <td id="accnum">XXXX-XXXX-XXXX-2315</td>
+      
+      
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>XXXX-XXXX-XXXX-4587</td>
-      <td>07-25</td>
-      <td>Visa</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>example@paypal.com</td>
-      <td>N/A</td>
-      <td>Paypal</td>
-    </tr>
+    
   </tbody>
 </table>
   </div>  </div>
+
+
+  <div id="cardDiv" class="w3-modal" style="display: none;">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-teal"> 
+       <span onclick="document.getElementById('cardDiv').style.display='none'" 
+        class="w3-button w3-display-topright">&times;</span>
+      </header>
+
+      <div class="w3-container">
+        <section class="toggle_box_content current" id="bio">
+
+  <form id="addAccount" name="addAccount" >
+<div class="row" style="padding-top: 7%;">
+  <div style="width: 40%; height: 25%; padding-left: 25px;">
+<select id="accType" name="accType" class="form-control custom-select">
+
+                  <option value="1">Master Card</option>
+
+                  <option value="2">Visa Card</option>
+
+
+
+                </select>
+                </div>
+
+        <div style="width: 40%; height: 25%; padding-left: 25px;">
+      <input id="card_no" name="card_no" style="margin-bottom: 15px;" type="text" class="form-control form-control-lg"  aria-describedby="emailHelp" placeholder="Account Number" required>
+      </div>
+      <div style="width: 40%; height: 25%; padding-left: 25px;">
+      <input id="card_date" name="card_no" style="margin-bottom: 15px;" type="date" class="form-control form-control-lg"  aria-describedby="emailHelp" placeholder="Expire Date" required>
+      </div>
+      <div>
+        <div class="col-sm-4 text-center">
+        <a href="{{url('/account-payment/addCard')}}" onclick="event.preventDefault(); addCard();" class="btn btn-primary">Add card</a>
+    </div>
+      </div>
+    </div>
+    </form>
+
+</div>
+</section>
+      </div>
+      
+    </div>
+  </div>
+  <script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    var url = "{{ url('/') }}";
+
+
+    function addCard(){
+      var type = $("#accType option").filter(":selected").text();
+      var number = $("#card_no").val();
+      var date = $("#card_date").val();
+      console.log(type+number+date);
+
+      $.ajax({
+            type:'POST',
+            url:url+"/addCard",
+            data:{
+              type:type, 
+              date: date,
+              number:number
+            },
+            success:function(data){
+              $('#acctype').html(data['data'].accounttype);
+              $('#accdate').html(date);
+              $('#accnum').html(data['data'].accountnumber);
+              document.getElementById('cardDiv').style.display='none';
+
+              // console.log("Success" , data);
+                
+            },
+            error: function (data) {
+              alert('Error:', data);
+            }
+
+
+        });    }
+  </script>
+
+
                             
                         </div>
                         
@@ -312,7 +241,7 @@
 
 
           <li><a href="about.html">About Us</a></li>
-          <li><a href="account-payment.html">Payment Method</a></li>
+          <li><a href="{{url('/account-payment')}}">Payment Method</a></li>
 
 
 

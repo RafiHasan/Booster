@@ -15,7 +15,7 @@
       href="https://scontent.fdac6-1.fna.fbcdn.net/v/t35.0-12/23698614_1340578692737598_1074966544_o.png?_nc_cat=0&oh=aeba2a938682be4c93c51c2189d7506f&oe=5ACC7135" />
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="canonical" href="/login.html">
+  <link rel="canonical" href="/login">
   <link rel="alternate" type="application/rss+xml" title="CrowdFundr - by ExpressPixel" href="/feed.xml">
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
   <script src="javascripts/scrollPosStyler.js"></script>
@@ -48,7 +48,7 @@
 </div>
 
 <div class="top-right links">
-<a href="/register.html">Register</a>
+<a href="/register">Register</a>
 </div>
 <div class="container">
             <br />
@@ -110,7 +110,7 @@
 
 <div class="row">
     <div class="offset-sm-2 col-sm-8 text-center">
-        <a class="btn btn-link" href="password-reset.html">
+        <a class="btn btn-link" href="password-reset">
             Forgot Your Password?
         </a>
     </div>        
@@ -136,8 +136,8 @@
          <ul class="list-unstyled">
 
 
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="account-payment.html">Payment Method</a></li>
+          <li><a href="about">About Us</a></li>
+          <li><a href="account-payment">Payment Method</a></li>
 
 
 
@@ -147,9 +147,9 @@
       <div class="col-4 col-md-3">
        <h5 class="mt-4 mb-4">Help</h5>
        <ul class="list-unstyled">
-         <li><a class="transition-all navy-400 hover-navy-500" href="typography.html">FAQ</a></li>
-         <li><a class="transition-all navy-400 hover-navy-500" href="typography.html">Our Rules</a></li>
-         <li><a class="transition-all navy-400 hover-navy-500" href="contact.html">Contact Us</a></li>
+         <li><a class="transition-all navy-400 hover-navy-500" href="typography">FAQ</a></li>
+         <li><a class="transition-all navy-400 hover-navy-500" href="typography">Our Rules</a></li>
+         <li><a class="transition-all navy-400 hover-navy-500" href="contact">Contact Us</a></li>
 
        </ul>
      </div>

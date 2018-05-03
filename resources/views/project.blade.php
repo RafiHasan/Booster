@@ -10,96 +10,19 @@
 
 	<!-- favicon -->
 
-	<link rel="icon" 
-	type="image/png" 
-	href="https://scontent.fdac6-1.fna.fbcdn.net/v/t35.0-12/23698614_1340578692737598_1074966544_o.png?_nc_cat=0&oh=aeba2a938682be4c93c51c2189d7506f&oe=5ACC7135" />
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="canonical" href="/project.html">
-	<link rel="alternate" type="application/rss+xml" title="CrowdFundr - by ExpressPixel" href="/feed.xml">
-	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-	<script src="javascripts/scrollPosStyler.js"></script>
-	<!-- JavaScript -->
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.min.js" ></script>
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.4/vue.min.js"></script>
-
-
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
-
-	<link rel="stylesheet" href="css/main.css">
+	@include('Format.css_js_file')
 
 
 
 </head>
 <body>
 
-	<nav class="navbar navbar-toggleable-sm navbar-light bg-primary fixed-top"  id="navbar" v-cloak >
-		<div class="container top-nav" v-if="!search">
-
-			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<a class="navbar-brand" href="index.html">BOOSTER</a>
-
-			<div class="collapse navbar-collapse" id="navbarColor01">
-				<ul class="navbar-nav mr-auto" >
-					<li class="nav-item active">
-						<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="explore.html">Explore</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="edit.html">Start a project</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="about.html">About us</a>
-					</li>
-				</ul>
-				<ul class="navbar-nav" >
-					<li class="nav-item hidden-sm-down">
-						<a class="nav-link" href="#" v-on:click.prevent="showSearchBar"><i class="fa fa-search" aria-hidden="true"></i></a>
-					</li>
-					<li class="nav-item hidden-sm-up">
-						<a class="nav-link" href="#" v-on:click.prevent="showSearchBar">Search</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#" data-toggle="modal" data-target=".login-modal-lg">Login</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link"href="#" data-toggle="modal" data-target=".signup-modal-lg">Sign up</a>
-					</li>
-				</ul>
-				<form class="form-inline" style="display: none">
-					<input class="form-control mr-sm-2" type="text" placeholder="Search">
-					<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-				</form>
-			</div>
-		</div>
-
-		<div class="container" v-else>
-			<div class="input-group search-bar">
-				<span class="input-group-addon"><i class="icon-magnifier icons"></i></span>
-				<input type="text" class="form-control form-control-lg" placeholder="Search">
-				<span class="input-group-addon" ><a href="" class="text-muted" v-on:click.prevent="hideSearchBar"><i class="icon-close icons"></i></a></span>
-			</div>
-		</div>
-
-	</nav>
+	@include('Format.header')
 
 	
 	<br />
-	<div class="container inner">
+	<br />
+	<div id="projDiv" class="container inner">
 		<div class="row">
 			<div class="col-sm-8">
 
@@ -111,28 +34,28 @@
 							</div>
 
 							<div class="col-sm-10">
-								<h3>Pebble Time 2 - An Awesome Smartwatch, No Compromises</h3>
+								<h3>{{$project[0]->title}}</h3>
 								<br />
-								<p class="mb-1">24% funded</p>
+								<p class="mb-1">{{$sum =(DB::table('backers')->select('money')->where(['project_id'=>$project[0]->id])->get()->sum('money'))/$project[0]->goal*100}}% funded</p>
 								<div class="progress">
-									<div class="progress-bar" role="progressbar" style="width: 29%" aria-valuenow="29" aria-valuemin="0" aria-valuemax="100"></div>
+									<div class="progress-bar" role="progressbar" style="width: {{$sum =(DB::table('backers')->select('money')->where(['project_id'=>$project[0]->id])->get()->sum('money'))/$project[0]->goal*100}}%" aria-valuenow="29" aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 
 
 								<div class="row">
 									<div class="col-sm-6">
-										<h3>$1,245</h3>
-										<p class="mb-1">backed by 132 people</p>
+										<h3>৳{{$sum = DB::table('backers')->select('money')->where(['project_id'=>$project[0]->id])->get()->sum('money')}}</h3>
+										<p class="mb-1">backed by {{$count = DB::table('backers')->select('id')->where(['project_id'=>$project[0]->id])->get()->count()}} people</p>
 									</div>
 									<div class="col-sm-6 text-right">
-										<h3>$2,947</h3>
+										<h3>৳{{$project[0]->goal}}</h3>
 										<p class="mb-1">Funding goal</p>
 									</div>
 								</div>
 								<br />
 								<br />
 
-								<iframe width="100%" height="350" src="https://www.youtube.com/embed/Pwq89K6RBTI" frameborder="0" allowfullscreen></iframe>
+								<iframe  width="100%" height="350" src="{{$project[0]->video}}" frameborder="0" allowfullscreen></iframe>
 
 							</div>
 						</div>
@@ -148,8 +71,8 @@
 
 									<li class="nav-item" style="width: 100%">
 
-										<span class="badge badge-pill badge-info float-sm-right" style="margin-left: 5px;margin-top: 5px;">Technology</span>
-										<span class="badge badge-pill badge-danger float-sm-right" style="margin-left: 0px;margin-top: 5px;">Prototype Stage</span>
+										<span class="badge badge-pill badge-info float-sm-right" style="margin-left: 5px;margin-top: 5px;">{{$project[0]->subcategory}}</span>
+										<span class="badge badge-pill badge-danger float-sm-right" style="margin-left: 0px;margin-top: 5px;">{{$project[0]->category}}</span>
 
 									</li>
 								</ul>
@@ -161,14 +84,10 @@
 
 						<div class="row">
 							<div class="col-md-4">
-								<a href=""><img class="img-fluid" src="https://unsplash.it/310/210?image=1" class="img-fluid" /></a>
+								<a href=""><img class="img-fluid" src="{{$project[0]->image}}" class="img-fluid" /></a>
 							</div>
 							<div class="col-md-8">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam odio est, placerat nec iaculis ut, sodales nec libero.
-									Quisque ac est quis velit pharetra sollicitudin. Mauris maximus, libero non fermentum placerat, turpis nulla laoreet
-									sapien, ut cursus nisi metus et ligula. Integer semper porttitor condimentum. Sed vulputate urna sapien, non feugiat
-									nulla tincidunt eu. Quisque aliquet quam sed libero consectetur mollis. Nunc id hendrerit eros. In porta, urna sed
-								condimentum aliquam, felis orci vestibulum odio, et dictum risus libero at nisi.</p>
+								<p>{{$project[0]->blurb}}</p>
 							</div>
 						</div>
 
@@ -182,7 +101,7 @@
 								<a class="nav-link" data-toggle="tab" href="#updates" role="tab">UPDATES (3)</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" data-toggle="tab" href="#comments" role="tab">COMMENTS (40)</a>
+								<a onclick="event.preventDefault(); comments({{$user[0]->id}});" class="nav-link" data-toggle="tab" href="#comments" role="tab">COMMENTS </a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link "  data-toggle="tab" href="#backers" role="tab">BACKERS (797)</a>
@@ -194,174 +113,232 @@
 						<!-- Tab panes -->
 						<div class="tab-content">
 							<div class="tab-pane active" id="home" role="tabpanel">
-								<p><strong>I'm gonna build me an airport, put my name on it. Why, Michael? So you can fly away from your feelings? I don't care if it takes from now till the end of Shrimpfest.</strong></p>
+								<p><strong>{{$project[0]->blurb}}</strong></p>
 
-								<h6><strong>Lorem Ipsum is not a major key to success. </strong></h6>
-								<p>I’m giving you cloth talk, cloth. Special cloth alert, cut from a special cloth. Fan luv. Always remember in the jungle there’s a lot of they in there, after you overcome they, you will make it to paradise. Watch your back, but more importantly when you get out the shower, dry your back, it’s a cold world out there. Every chance I get, I water the plants, Lion! You see that bamboo behind me though, you see that bamboo? Ain’t nothin’ like bamboo. Bless up.</p>
 
-								<h6><strong>Hammock talk come soon. </strong></h6>
-								<p>Hammock talk come soon. It’s important to use cocoa butter. It’s the key to more success, why not live smooth? Why live rough? To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. How’s business? Boomin. How’s business? Boomin. I’m up to something. Stay focused. Cloth talk. Let me be clear, you have to make it through the jungle to make it to paradise, that’s the key, Lion!</p>
+								@foreach($story as $stor)
+								<img src="{{$stor->image}}" style="max-height: 100%; max-width: 100%;">
+								
+								<p><h6>{{$stor->description}}</h6></p>
+								@endforeach
 
-								<h6><strong>Ohhh little guy. .</strong></h6>
-								<p>Ohhh little guy. The tears aren't coming. The tears just aren't coming. Look, you are playing adults…with fully formed libidos, not 2 young men playing grab-ass in the shower. Boy, I sure feel like a Mary without a Peter and a Paul. And although the intervention didn't work, it turned into one of the Bluth family's better parties. I'm tired of trying to find happiness through lies and self-medicating. If you need me, I'll be at the bar. </p>
+
 							</div>
+
+
+
+
 							<div class="tab-pane" id="updates" role="tabpanel">
-								<div class="card mb-4">
+								@foreach($update as $up)
+								<div class="card mb-4" id="updates2">
 									<div class="card-block">
-										<h5 class="card-title">We made it!!!</h5>
+										<h5 class="card-title">{{$up->title}}</h5>
 										<h6 class="card-subtitle mb-2 text-muted">March 16</h6>
-										<p class="card-text"><b>We did it! In less than 3 days (52 hours to be exact!) we hit our minimum funding goal.</b> I seriously can’t believe it.  Nunc id hendrerit eros. In porta, urna sed condimentum aliquam, felis orci vestibulum odio, et dictum risus libero at nisi.</p>
-										<a href="#" class="card-link">Read more</a>
-									</div>
-								</div>
-								<div class="card mb-4">
-									<div class="card-block">
-										<h5 class="card-title">The Mid-Campaign March + 300 Backers!</h5>
-										<h6 class="card-subtitle mb-2 text-muted">March 7</h6>
-										<p class="card-text">Within the last 24 hours, our campaign has surpassed <b>300 backers and $35,000</b>! THANK YOU to everyone who has graciously donated to our campaign over the past two weeks....</p>
-										<a href="#" class="card-link">Read more</a>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-block">
-										<h5 class="card-title">Wow! 50% funded... in the first 9 hours???</h5>
-										<h6 class="card-subtitle mb-2 text-muted">March 7</h6>
-										<p class="card-text">Within the last 9 hours, our campaign has made 50% of what we set out to reach. Thanks so much guys!!!  Nunc id hendrerit eros. In porta, urna sed condimentum aliquam, felis orci vestibulum odio, et dictum risus libero at nisi.</p>
-										<a href="#" class="card-link">Read more</a>
+										<p class="card-text">{{$up->update}}</p>
+										
 									</div>
 								</div>
 
-							</div>
+			
+<br/>
+<br/>
+     @endforeach
+	@if(Auth::check())							
+    @if(Auth::user()->id==$user[0]->id)
+      <form id="ContactForm2" onsubmit="return submitForm2();">
+
+
+        <div class="form-group">
+
+          <div class="form-group row">
+            <label for="example-text-input" class="col-3 col-form-label">Update title :</label>
+            <div class="col-9">
+            	<input type="hidden" name="project_id" value="{{$project[0]->id}}">
+                                <input class="form-control"  placeholder="New Update" id="updateTitle" name="updateTitle" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+
+          <div class="form-group row">
+            <label for="example-text-input" class="col-3 col-form-label">Detail description :</label>
+            <div class="col-9">
+                                <textarea id="updateDesc" name="updateDesc" class="form-control form-control-lg" rows="3"></textarea required>
+                               
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+                                <div class="col-9 col-md-10">
+                                        <input type="submit" class="btn btn-primary" style="float: right;" value="Add update">
+                                </div>
+                            </div>
+
+        
+
+         </form> 
+
+         @endif
+         @endif
+		</div>
+
+
+
+
+
+
+
+
 							<div class="tab-pane" id="comments" role="tabpanel">
-								<ul class="comment-section mt-0">
+								<ul id="comment_list" class="comment-section mt-0">
 
-									<li class="comment user-comment">
+@foreach($comment as $comm)
+
+@if(Auth::check()&&Auth::user()->id==$comm->user_id)
+
+									<li id="normal_user_comment" class="comment user-comment">
 
 										<div class="info">
-											<a href="#">Anie Silverston</a>
+											<a href="#">{{DB::table('users')->select('first_name')->where(['id'=>$comm->user_id])->pluck('first_name')[0]}}</a>
 											<span>4 hours ago</span>
 										</div>
 
 										<a class="avatar" href="#">
-											<img src="images/team/pixeliris.jpg" width="35" alt="Profile Avatar" title="Anie Silverston" />
+											<img src="{{DB::table('users')->select('picture')->where(['id'=>$comm->user_id])->pluck('picture')[0]}}" width="35" alt="Profile Avatar" title="Anie Silverston" />
 										</a>
 
-										<p>Suspendisse gravida sem?</p>
+										<p>{{$comm->comment}}</p>
 
 									</li>
-
-									<li class="comment author-comment">
+@else
+									<li id="admin_comment" class="comment author-comment">
 
 										<div class="info">
-											<a href="#">Jack Smith</a>
+											<a href="#">{{DB::table('users')->select('first_name')->where(['id'=>$comm->user_id])->pluck('first_name')[0]}}</a>
 											<span>3 hours ago</span>
 										</div>
 
 										<a class="avatar" href="#">
-											<img src="images/team/commadelimited.jpg" width="35" alt="Profile Avatar" title="Jack Smith" />
+											<img src="{{DB::table('users')->select('picture')->where(['id'=>$comm->user_id])->pluck('picture')[0]}}" width="35" alt="Profile Avatar" title="Jack Smith" />
 										</a>
 
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse gravida sem sit amet molestie portitor.</p>
+										<p>{{$comm->comment}}</p>
 
 									</li>
-
-									<li class="comment author-comment">
-
-										<div class="info">
-											<a href="#">Jack Smith</a>
-											<span>3 hours ago</span>
-										</div>
-
-										<a class="avatar" href="#">
-											<img src="images/team/commadelimited.jpg" width="35" alt="Profile Avatar" title="Jack Smith" />
-										</a>
-
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse gravida sem sit amet molestie portitor.</p>
-
-									</li>
-
-
-
-
-									<li class="comment user-comment">
-
-										<div class="info">
-											<a href="#">Bradley Jones</a>
-											<span>1 hour ago</span>
-										</div>
-
-										<a class="avatar" href="#">
-											<img src="images/team/pixeliris.jpg" width="35" alt="Profile Avatar" title="Bradley Jones" />
-										</a>
-
-										<p>Suspendisse gravida sem sit amet molestie portitor?</p>
-
-									</li>
-
-									<li class="comment author-comment">
-
-										<div class="info">
-											<a href="#">Jack Smith</a>
-											<span>3 hours ago</span>
-										</div>
-
-										<a class="avatar" href="#">
-											<img src="images/team/commadelimited.jpg" width="35" alt="Profile Avatar" title="Jack Smith" />
-										</a>
-
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse gravida sem sit amet molestie portitor.</p>
-
-									</li>
-
-
-
-									<li class="comment user-comment">
-
-										<div class="info">
-											<a href="#">Bradley Jones</a>
-											<span>1 hour ago</span>
-										</div>
-
-										<a class="avatar" href="#">
-											<img src="images/team/pixeliris.jpg" width="35" alt="Profile Avatar" title="Bradley Jones" />
-										</a>
-
-										<p>Suspendisse gravida sem sit amet molestie portitor?</p>
-
-									</li>
-
-									<li class="comment author-comment">
-
-										<div class="info">
-											<a href="#">Jack Smith</a>
-											<span>1 hour ago</span>
-										</div>
-
-										<a class="avatar" href="#">
-											<img src="images/team/commadelimited.jpg" width="35" alt="Profile Avatar" title="Jack Smith" />
-										</a>
-
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisee gravida sem sit amet molestie porttitor.</p>
-
-									</li>
-
+@endif
+@endforeach
+@if(Auth::check())
 									<li class="write-new">
-
-										<form action="#" method="post">
-
-											<textarea placeholder="Write your comment here" name="comment"></textarea>
+										
+										<form id="ContactForm" onsubmit="return submitForm({{Auth::user()->id}});">
+											
+                                            <input type="hidden" name="project_id" value="{{$project[0]->id}}">
+                                            
+											<textarea id="addComment" name="addComment" placeholder="Write your comment here" name="comment" required></textarea>
 
 											<div>
-												<img src="images/team/commadelimited.jpg" width="35" alt="Profile of Bradley Jones" title="Bradley Jones" />
-												<button type="submit" class="btn btn-primary">Submit</button>
+												<img src="{{Auth::user()->picture}}" width="35" alt="Profile of Bradley Jones" title="Bradley Jones" />
+												<button type="submit" id="commentsubmit" class="btn btn-primary">Submit</button>
 											</div>
 
 										</form>
 
 									</li>
-
+@endif
 								</ul>
 							</div>
+
+
+
+							<script >
+								$.ajaxSetup({
+							        headers: {
+							            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+							        }
+							    });
+
+
+								var url = "{{ url('/') }}";
+
+								function submitForm(uid) { 
+    $.ajax({type:'POST', url: '/addComments', data:$('#ContactForm').serialize(), success: function(data) {
+       var mainDiv = document.getElementById("comment_list");
+           mainDiv.innerHTML="";
+
+    
+var i;
+          for(i=0;i<data['comment'].length;i++){
+
+          	var user_id=data['comment'][i].user_id;
+          	var comment=data['comment'][i].comment;
+          	var name=data['pro'][i].name;
+          	var img=data['pro'][i].img;
+            
+
+       if(uid==user_id)
+       {
+      	var use='<li id="normal_user_comment" class="comment user-comment"><div class="info"><a href="#">'+name+'</a><span>4 hours ago</span></div><a class="avatar" href="#"><img src="'+img+'" width="35" alt="Profile Avatar" title="Anie Silverston" /></a><p>'+comment+'</p></li>';
+      var newDiv = document.createElement("li");
+          newDiv.innerHTML = use;
+      mainDiv.appendChild(newDiv);}
+       
+      else
+      {
+       var use2='<li id="admin_comment" class="comment author-comment"><div class="info"><a href="#">'+name+'</a><span>3 hours ago</span></div><a class="avatar" href="#"><img src="'+img+'" width="35" alt="Profile Avatar" title="Jack Smith" /></a><p>'+comment+'</p></li>';
+     var newDiv = document.createElement("li");
+          newDiv.innerHTML = use2;
+      mainDiv.appendChild(newDiv); }
+
+
+   }
+
+       var use3='<li class="write-new"><form id="ContactForm" onsubmit="return submitForm();"><input type="hidden" name="project_id" value="{{$project[0]->id}}"><textarea id="addComment" name="addComment" placeholder="Write your comment here" name="comment" required></textarea><div><button type="submit" id="commentsubmit" class="btn btn-primary">Submit</button></div></form></li>';
+       var newDiv = document.createElement("li");
+          newDiv.innerHTML = use3;
+      mainDiv.appendChild(newDiv);
+
+    }});
+
+    return false;
+}
+
+
+
+								function submitForm2() { 
+    $.ajax({type:'POST', url: '/addupdates', data:$('#ContactForm2').serialize(), success: function(data) {
+       var mainDiv = document.getElementById("updates");
+           mainDiv.innerHTML="";
+
+    
+var i;
+          for(i=0;i<data['update'].length;i++){
+
+          	var title=data['update'][i].title;
+          	var update=data['update'][i].update;
+
+ var use='<div class="card mb-4" id="updates2"><div class="card-block"><h5 class="card-title">'+title+'</h5><h6 class="card-subtitle mb-2 text-muted">March 16</h6><p class="card-text">'+update+'</p><a href="#" class="card-link">Read more</a></div></div><br/><br/>';
+      var newDiv = document.createElement("div");
+          newDiv.innerHTML = use;
+      mainDiv.appendChild(newDiv); 
+      
+
+   }
+       var use3='<form id="ContactForm2" onsubmit="return submitForm2();"><div class="form-group"><div class="form-group row"><label for="example-text-input" class="col-3 col-form-label">Update title :</label><div class="col-9"><input type="hidden" name="project_id" value="{{$project[0]->id}}"><input class="form-control"  placeholder="New Update" id="updateTitle" name="updateTitle" required></div></div></div><div class="form-group"><div class="form-group row"><label for="example-text-input" class="col-3 col-form-label">Detail description :</label><div class="col-9"><textarea id="updateDesc" name="updateDesc" class="form-control form-control-lg" rows="3" required></textarea></div></div></div><div class="form-group row"><div class="col-9 col-md-10"><input type="submit" class="btn btn-primary" style="float: right;" value="Add update"></div></div></form> ';
+       var newDiv = document.createElement("div");
+          newDiv.innerHTML = use3;
+      mainDiv.appendChild(newDiv);
+
+    }});
+
+    return false;
+}
+
+
+								
+
+							</script>
 
 
 
@@ -382,38 +359,18 @@
 
 
 								<div class="row" >
+
+								@foreach($backer as $back)	
 									<div class="col-sm-3"><div class="card" style="width:150px;">
-										<img class="card-img-top" src="https://scontent.fdac6-1.fna.fbcdn.net/v/t1.0-9/12540606_968536586528116_379126017994150594_n.jpg?_nc_cat=0&oh=3e5cc96e16a2615daf2bb31df47b67f7&oe=5B751973" alt="Card image" style="width:100%">
+										<img class="card-img-top" src="{{DB::table('users')->select('picture')->where(['id'=>$back->user_id])->pluck('picture')[0]}}" alt="Card image" style="width:100%">
 										<div class="card-body" style="padding: 10px">
-											<h5 class="card-title" style="text-align: center;">Darpon Islam</h5>
+											<h5 class="card-title" style="text-align: center;">{{DB::table('users')->select('first_name')->where(['id'=>$back->user_id])->pluck('first_name')[0]}}</h5>
 											<p class="card-text" style="text-align: center;"   >Backed 5 projects</p>
 											
 										</div>
 									</div></div>
-									<div class="col-sm-3"><div class="card" style="width:150px">
-										<img class="card-img-top" src="https://scontent.fdac6-1.fna.fbcdn.net/v/t35.0-12/22404333_1477746762273760_1555845673_o.jpg?_nc_cat=0&oh=760819eb7e94c05b33580073c5834d59&oe=5ACE244D" alt="Card image" style="width:100%">
-										<div class="card-body" style="padding: 10px">
-											<h5 class="card-title" style="text-align: center;">Raqibul Hasan</h5>
-											<p class="card-text" style="text-align: center;"   >Backed 5 projects</p>
-											
-										</div>
-									</div></div>
-									<div class="col-sm-3"><div class="card" style="width:150px">
-										<img class="card-img-top" src="https://scontent.fdac6-1.fna.fbcdn.net/v/t1.0-9/26814778_1334473323323720_7240660881411595294_n.jpg?_nc_cat=0&oh=1bc9a2e31c44c905361de11aa34e0c63&oe=5B5E3C09" alt="Card image" style="width:100%" >
-										<div class="card-body" style="padding: 10px">
-											<h5 class="card-title" style="text-align: center;">Polok Ahmed</h5>
-											<p class="card-text" style="text-align: center;"   >Backed 5 projects</p>
-											
-										</div>
-									</div></div>
-									<div class="col-sm-3"><div class="card" style="width:150px">
-										<img class="card-img-top" src="https://scontent.fdac6-1.fna.fbcdn.net/v/t1.0-9/18893032_1694001790909329_1553307021098421281_n.jpg?_nc_cat=0&oh=9e472bd637bb11443665380f0612171e&oe=5B318FB0" alt="Card image" style="width:100%">
-										<div class="card-body" style="padding: 10px" >
-											<h5 class="card-title" style="text-align: center;">Tanvir Nihal</h5>
-											<p class="card-text" style="text-align: center;"   >Backed 5 projects</p>
-											
-										</div>
-									</div></div>
+									
+									@endforeach
 								</div>
 
 
@@ -503,29 +460,50 @@
 		<div class="col-sm-11 offset-sm-1"  >
 			<div class="card "  >
 				<div class="card-block" class="pb-1" >
-					<div class="row ">
-						<div class="col-sm-12">
+					<div class="row " >
+						<div class="col-sm-12" >
 
 							<h4>Project by</h4>
 
-							<div class="row ">
+							<div class="row " >
 								<div class="col-sm-5">
-									<a href=""><img src="https://randomuser.me/api/portraits/men/51.jpg" class="img-fluid rounded-circle" /></a>
-									<br />
-									<br />
+									<a onclick="event.preventDefault(); document.getElementById('id01').style.display='block';document.getElementById('id01').style.overflow='auto';showProfile({{1}});"  class="nav-link" href="">
+										@if($user[0]->picture==null)
+										<img src="{{url('/').'/default/profiledefault.png'}}" class="img-fluid rounded-circle" />
+										@else
+										<img src="{{$user[0]->picture}}" class="img-fluid rounded-circle" />
+										@endif
+									</a>
+									
 								</div>
 								<div class="col-sm-6">
-									<h3 class="mb-0"><strong>Jon doe</strong></h3>
-									<p class="mt-0 mb-0">Chcargo, IL</p>
-									<p class="mt-0 mb-0">5 Projects, IL</p>
-									<br />
-									<br />
+									<h3 class="mb-0"><strong>{{$user[0]->first_name}}</strong></h3>
+									<p class="mt-0 mb-0">{{$user[0]->location}}</p>
+									<p class="mt-0 mb-0">{{$count = DB::table('projects')->select('id','user_id')->where(['user_id'=>$user[0]->id])->get()->count()}} Project</p>
+									
 								</div>
 
 
 							</div>
+
+							<!--collaborator-->
+
+							<div class="row " ">
+								@foreach($colaborator as $cola)
+								<div class="col-sm-4">
+									<a onclick="event.preventDefault(); document.getElementById('id01').style.display='block';document.getElementById('id01').style.overflow='auto'"  class="nav-link" href="">
+										@if(DB::table('users')->select('id','first_name','location','picture')->where(['id'=>$cola->collab_id])->get()[0]==null)
+										<img src="{{url('/').'/default/profiledefault.png'}}" class="img-fluid rounded-circle" />
+										@else
+										<img src="{{DB::table('users')->select('picture')->where(['id'=>$cola->collab_id])->pluck('picture')[0]}}" class="img-fluid rounded-circle" />
+										@endif
+									</a>
+									
+								</div>	
+								@endforeach
+							</div>
+
 							<a href="" class="btn btn-lg btn-primary btn-block">Back this project</a><br />
-							<p>This project will only be funded if at least $15,000 is pledged by Wednesday May 8, 3:00pm</p>
 
 						</div>
 
@@ -665,68 +643,83 @@
 </footer>-->
 
 
-
-
-
 <div class="modal fade login-modal-lg" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-sm">
-		<div class="modal-content" style="background: transparent; border: none;">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content" style="background: transparent; border: none;">
 
-			<div class="modal-body">
+            <div class="modal-body">
 
-				<div class="row">
+            <div class="row">
 
-					<div class="col-sm-12">
-						<div class="row">
-							<div class="col-sm-12  pull-right">
-								<h4  style="color: #fff; font-weight: 100;">Login</h4>
-								<a href="#" data-dismiss="modal" style="position: absolute; top: 0; right: 0;"><i class="icon-close icons" aria-hidden="true" style="color: #fff; font-size: 26px"></i></a>
-								<div class="card mt-3" style="background: #fff; padding: 10px">
-									<h6 style="color: #000;font-weight: 100;">Already have an account</h6>
-									<p>Please login to continue.</p><br />
-									<form>
-										<div class="form-group row">
-											<div class="col-sm-12">
-												<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-											</div>
-										</div>
-										<div class="form-group row">
-											<div class="col-sm-12">
-												<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-2s"></label>
-											<div class="col-sm-10">
-												<div class="form-check">
-													<label class="form-check-label">
-														<input class="form-check-input" type="checkbox"> Remember me
-													</label>
-												</div>
-											</div>
-										</div>
-										<br /><br />
-										<div class="form-group row">
-											<div class="offset-sm-3 col-sm-6 text-center">
-												<a href="account-dashboard.html" class="btn btn-primary btn-block">Sign in</a>
-											</div>
-										</div>
-										<div class="form-group row">
-											<div class="offset-sm-2 col-sm-8 text-center">
-												<a href="" class="mt-2">Forgotten your password</a>
-											</div>
-										</div>
-									</form>                            
-								</div>	 		
-							</div>	 		
-						</div>	 		
-					</div>	 		
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12  pull-right">
+                            <h4  style="color: #fff; font-weight: 100;">Login</h4>
+                            <a href="#" data-dismiss="modal" style="position: absolute; top: 0; right: 0;"><i class="icon-close icons" aria-hidden="true" style="color: #fff; font-size: 26px"></i></a>
+                            <div class="card mt-3" style="background: #fff; padding: 10px">
+                              <h6 style="color: #000;font-weight: 100;">Already have an account</h6>
+                                <p>Please login to continue.</p><br />
+                                <form method="POST" action="{{ route('login') }}">
+                                	{{ csrf_field() }}
+                                    <div class="row form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                      <div class="col-sm-12">
+                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 
-				</div>
-			</div>
-		</div>
-	</div>
+                                <!-- @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif -->
+                                      </div>
+                                    </div>
+                                    <div class="row form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                      <div class="col-sm-12">
+                                        <input id="password" type="password" class="form-control" name="password" required>
+
+                                <!-- @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif -->
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label class="col-sm-2s"></label>
+                                      <div class="col-sm-10">
+                                        <div class="form-check">
+                                          <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" {{ old('remember') ? 'checked' : '' }}> Remember me
+                                          </label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <br /><br />
+                                    <div class="form-group row">
+                                      <div class="offset-sm-3 col-sm-6 text-center">
+                                      	
+                                        <button type="submit" class="btn btn-primary btn-block">Sign in
+                                        </button>
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <div class="offset-sm-2 col-sm-8 text-center">
+                                        <a href="{{ route('password.request') }}" class="mt-2">Forgotten your password</a>
+                                      </div>
+                                    </div>
+                                  </form> 
+                              </div>	 		
+                        </div>	 		
+                    </div>	 		
+                </div>	 		
+
+            </div>
+            </div>
+    </div>
+  </div>
 </div>
+
+
+
 
 <div class="modal fade signup-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 	<div class="modal-dialog">

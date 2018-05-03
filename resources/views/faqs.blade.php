@@ -15,7 +15,7 @@
       href="https://scontent.fdac6-1.fna.fbcdn.net/v/t35.0-12/23698614_1340578692737598_1074966544_o.png?_nc_cat=0&oh=aeba2a938682be4c93c51c2189d7506f&oe=5ACC7135" />
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="canonical" href="/faqs.html">
+  <link rel="canonical" href="/faqs">
   <link rel="alternate" type="application/rss+xml" title="CrowdFundr - by ExpressPixel" href="/feed.xml">
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
   <script src="javascripts/scrollPosStyler.js"></script>
@@ -49,21 +49,21 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
-  <a class="navbar-brand" href="index.html">BOOSTER</a>
+  <a class="navbar-brand" href="index">BOOSTER</a>
 
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto" >
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="explore.html">Explore</a>
+        <a class="nav-link" href="explore">Explore</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="edit.html">Start a project</a>
+        <a class="nav-link" href="edit">Start a project</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="about.html">About us</a>
+        <a class="nav-link" href="about">About us</a>
       </li>
     </ul>
     <ul class="navbar-nav" >
@@ -126,8 +126,8 @@
          <ul class="list-unstyled">
 
 
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="account-payment.html">Payment Method</a></li>
+          <li><a href="about">About Us</a></li>
+          <li><a href="account-payment">Payment Method</a></li>
 
 
 
@@ -137,9 +137,9 @@
       <div class="col-4 col-md-3">
        <h5 class="mt-4 mb-4">Help</h5>
        <ul class="list-unstyled">
-         <li><a class="transition-all navy-400 hover-navy-500" href="typography.html">FAQ</a></li>
-         <li><a class="transition-all navy-400 hover-navy-500" href="typography.html">Our Rules</a></li>
-         <li><a class="transition-all navy-400 hover-navy-500" href="contact.html">Contact Us</a></li>
+         <li><a class="transition-all navy-400 hover-navy-500" href="typography">FAQ</a></li>
+         <li><a class="transition-all navy-400 hover-navy-500" href="typography">Our Rules</a></li>
+         <li><a class="transition-all navy-400 hover-navy-500" href="contact">Contact Us</a></li>
 
        </ul>
      </div>
@@ -269,7 +269,7 @@
                                     <br /><br />
                                     <div class="form-group row">
                                       <div class="offset-sm-3 col-sm-6 text-center">
-                                        <a href="account-dashboard.html" class="btn btn-primary btn-block">Sign in</a>
+                                        <a href="account-dashboard" class="btn btn-primary btn-block">Sign in</a>
                                       </div>
                                     </div>
                                     <div class="form-group row">
@@ -341,7 +341,7 @@
                                   <div class="text-center">
                                     <br /><br />
                                     <p>By signing up you agree to our terms and conditions and privacy policy</p>                          
-                                    <a href="account-dashboard.html" class="btn btn-primary">Create account</a><br /><br />
+                                    <a href="account-dashboard" class="btn btn-primary">Create account</a><br /><br />
                                     </div>
                                 </form>
 

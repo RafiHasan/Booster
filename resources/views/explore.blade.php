@@ -4,101 +4,26 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-  <title>Explore </title>
+  <title> Booster</title>
   <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search resu...">
 
-  <!-- favicon -->
 
-  <link rel="icon" 
-      type="image/png" 
-      href="https://scontent.fdac6-1.fna.fbcdn.net/v/t35.0-12/23698614_1340578692737598_1074966544_o.png?_nc_cat=0&oh=aeba2a938682be4c93c51c2189d7506f&oe=5ACC7135" />
+<!-- favicon -->
+@include('Format.css_js_file')
   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="canonical" href="/explore.html">
-  <link rel="alternate" type="application/rss+xml" title="CrowdFundr - by ExpressPixel" href="/feed.xml">
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-  <script src="javascripts/scrollPosStyler.js"></script>
-  <!-- JavaScript -->
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.min.js" ></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.4/vue.min.js"></script>
-
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
-
-  <link rel="stylesheet" href="css/main.css">
+  
 
 
 
 </head>
   <body>
-
-    <nav class="navbar navbar-toggleable-sm navbar-light bg-primary fixed-top"  id="navbar" v-cloak >
-  <div class="container top-nav" v-if="!search">
-
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-</button>
-  <a class="navbar-brand" href="index.html">BOOSTER</a>
-
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto" >
-      <li class="nav-item ">
-        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="explore.html">Explore </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="edit.html">Start a project</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about.html">About us</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav" >
-      <li class="nav-item hidden-sm-down">
-        <a class="nav-link" href="#" v-on:click.prevent="showSearchBar"><i class="fa fa-search" aria-hidden="true"></i></a>
-      </li>
-      <li class="nav-item hidden-sm-up">
-        <a class="nav-link" href="#" v-on:click.prevent="showSearchBar">Search</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" data-toggle="modal" data-target=".login-modal-lg">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"href="#" data-toggle="modal" data-target=".signup-modal-lg">Sign up</a>
-      </li>
-    </ul>
-    <form class="form-inline" style="display: none">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-    </div>
-
-    <div class="container" v-else>
-  <div class="input-group search-bar">
-  <span class="input-group-addon"><i class="icon-magnifier icons"></i></span>
-  <input type="text" class="form-control form-control-lg" placeholder="Search">
-  <span class="input-group-addon" ><a href="" class="text-muted" v-on:click.prevent="hideSearchBar"><i class="icon-close icons"></i></a></span>
-</div>
-    </div>
-
-</nav>
+@include('Format.header')
 
     <div class="mt-5">
 	<div class="container inner">
+
 <br />
 		<br />
 		<div class="row">
@@ -118,30 +43,31 @@
 				</button>
 				<div class="dropdown-menu" style="width: 100%">
 				
+					<a class="dropdown-item"   href="{{url('/explore/All Category')}}">All Category</a>
 					
-						<a class="dropdown-item" href="#art">Android Apps</a>
-					
-						<a class="dropdown-item" href="#comics">Website</a>
-					
-						<a class="dropdown-item" href="#crafts">Research</a>
-					
-						<a class="dropdown-item" href="#dance">Robotics</a>
-					
-						<a class="dropdown-item" href="#design">Web Apps</a>
-					
-						<a class="dropdown-item" href="#fashion">Games</a>
-					
-						<a class="dropdown-item" href="#film-video">Design & Tech</a>
-					
-						<a class="dropdown-item" href="#food">Services</a>
-					
-						<a class="dropdown-item" href="#games">Business Idea</a>
-					
-						<a class="dropdown-item" href="#journalism">Electorics</a>
-					
-						<a class="dropdown-item" href="#music">Networking</a>
-					
-						<a class="dropdown-item" href="#photography">Desktop Softwares</a>
+					<a class="dropdown-item"   href="{{url('/explore/Android Apps')}}">Android Apps</a>
+          
+		            <a class="dropdown-item"   href="{{url('/explore/Website')}}">Website</a>
+		          
+		            <a class="dropdown-item"    href="{{url('/explore/Research')}}">Research</a>
+		          
+		            <a class="dropdown-item"   href="{{url('/explore/Robotics')}}">Robotics</a>
+		          
+		            <a class="dropdown-item"   href="{{url('/explore/Web_Apps')}}">Web Apps</a>
+		          
+		            <a class="dropdown-item"   href="{{url('/explore/Games')}}">Games</a>
+		          
+		            <a class="dropdown-item"   href="{{url('/explore/Design_Tech')}}">Design & Tech</a>
+		          
+		            <a class="dropdown-item"   href="{{url('/explore/Services')}}">Services</a>
+		          
+		            <a class="dropdown-item"   href="{{url('/explore/Business')}}">Business Idea</a>
+		          
+		            <a class="dropdown-item"   href="{{url('/explore/Electorics')}}">Electorics</a>
+		          
+		            <a class="dropdown-item"   href="{{url('/explore/Networking')}}">Networking</a>
+		          
+		            <a class="dropdown-item"   href="{{url('/explore/Desktop_Softwares')}}">Desktop Softwares</a>
 					
 						
 					
@@ -275,69 +201,28 @@
 		<div class="row mt-2">
 			
 				
-				<div class="col-sm-3 mb-4">
-					<div class="card box">
-	<a href="project.html" >
-		<img src="http://i.expresspixel.com/unsplash.it/310/210?image=11" class="img-fluid hidden-xs-down"/>
-		<img src="http://i.expresspixel.com/unsplash.it/610/210?image=11" class="img-fluid hidden-sm-up"/>
-	</a>
-	<div class="card-block" class="pb-1" style="position: relative; padding-bottom: 60px; min-height: 250px;">
-
-				<h6><a href="project.html">architect frictionless supply-chains</a></h6>
-				<p class="text-muted">By <strong><a href="project.html" class="text-muted">Jonathan Howell</a></strong></p>
-				<p class="desc">MTS ASL Curriculum Workbook is a reproducible study book to build Early Literacy and Academic skills for primary school age children.</p>
-
-				<div style="position: absolute; bottom: 10px; width: 86%; ">
-				<div class="progress">
-  					<div class="progress-bar" role="progressbar" style="width: 76%" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
-				<p class="mb-1">76% funded</p>
-				</div>
-
-
-</div>
-<div class="card-footer text-muted">
-	<div class="row ">
-			<div class="col-12">
-			</div>
-			<div class="col-12">
-				<div class="row">
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Backers</p>
-						<h6 class="mt-0 mb-0"><strong>117</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Pledged</p>
-						<h6 class="mt-0 mb-0"><strong>&dollar;50,000</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Days&nbsp;Left</p>
-						<h6 class="mt-0 mb-0"><strong>14</strong></h6>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> 
-				</div>
+				
+@foreach($data as $value)
 				
 				<div class="col-sm-3 mb-4">
 					<div class="card box">
-	<a href="project.html" >
-		<img src="http://i.expresspixel.com/unsplash.it/310/210?image=21" class="img-fluid hidden-xs-down"/>
-		<img src="http://i.expresspixel.com/unsplash.it/610/210?image=21" class="img-fluid hidden-sm-up"/>
+	<a href="project/{{$value->id}}" >
+
+
+		<img src= "{{url('/').'/'.$value->image}}" class="img-fluid hidden-xs-down "  style="height: 150px; width: 100%;"/>
+		<img src="{{url('/').'/'.$value->image}}" class="img-fluid hidden-sm-up" style="height: 150px; width: 100%;" />
 	</a>
 	<div class="card-block" class="pb-1" style="position: relative; padding-bottom: 60px; min-height: 250px;">
 
-				<h6><a href="project.html">iterate plug-and-play metrics</a></h6>
-				<p class="text-muted">By <strong><a href="project.html" class="text-muted">Chris Adams</a></strong></p>
-				<p class="desc">This kit teaches how to print, correct an ugly grasp, and how to make sure your child's fine motor skills are kindergarten ready!</p>
+				<h6><a href="project">{{$value->title}}</a></h6>
+				<p class="text-muted">By <strong><a href="project" class="text-muted">{{DB::table('users')->select('first_name')->where([['id',$value->user_id]])->pluck('first_name')[0]}}</a></strong></p>
+				<p class="desc">{{$value->blurb}}</p>
 
 				<div style="position: absolute; bottom: 10px; width: 86%; ">
 				<div class="progress">
-  					<div class="progress-bar" role="progressbar" style="width: 61%" aria-valuenow="61" aria-valuemin="0" aria-valuemax="100"></div>
+  					<div class="progress-bar" role="progressbar" style="width: {{$sum =(DB::table('backers')->select('money')->where(['project_id'=>$value->id])->get()->sum('money'))/$value->goal*100}}%" aria-valuenow="11" aria-valuemin="0" aria-valuemax="100"></div>
 				</div>
-				<p class="mb-1">61% funded</p>
+				<p class="mb-1">{{$sum =(DB::table('backers')->select('money')->where(['project_id'=>$value->id])->get()->sum('money'))/$value->goal*100}}% funded</p>
 				</div>
 
 
@@ -350,15 +235,15 @@
 				<div class="row">
 					<div class="col-4 text-center">
 						<p class="mt-0 mb-0">Backers</p>
-						<h6 class="mt-0 mb-0"><strong>42</strong></h6>
+						<h6 class="mt-0 mb-0"><strong>{{$count = DB::table('backers')->select('id')->where(['project_id'=>$value->id])->get()->count()}}</strong></h6>
 					</div>
 					<div class="col-4 text-center">
 						<p class="mt-0 mb-0">Pledged</p>
-						<h6 class="mt-0 mb-0"><strong>&dollar;50,000</strong></h6>
+						<h6 class="mt-0 mb-0"><strong>৳{{$value->goal}}</strong></h6>
 					</div>
 					<div class="col-4 text-center">
 						<p class="mt-0 mb-0">Days&nbsp;Left</p>
-						<h6 class="mt-0 mb-0"><strong>19</strong></h6>
+						<h6 class="mt-0 mb-0"><strong>{{$value->duration}}</strong></h6>
 					</div>
 				</div>
 			</div>
@@ -366,650 +251,16 @@
 	</div>
 </div> 
 				</div>
+
+
+
+
+				@endforeach
 				
-				<div class="col-sm-3 mb-4">
-					<div class="card box">
-	<a href="project.html" >
-		<img src="http://i.expresspixel.com/unsplash.it/310/210?image=31" class="img-fluid hidden-xs-down"/>
-		<img src="http://i.expresspixel.com/unsplash.it/610/210?image=31" class="img-fluid hidden-sm-up"/>
-	</a>
-	<div class="card-block" class="pb-1" style="position: relative; padding-bottom: 60px; min-height: 250px;">
 
-				<h6><a href="project.html">architect best-of-breed niches</a></h6>
-				<p class="text-muted">By <strong><a href="project.html" class="text-muted">Ronald Spencer</a></strong></p>
-				<p class="desc">Establishing a free, world-class, public library which will be a center  for curating and disseminating knowledge in Nigeria.</p>
-
-				<div style="position: absolute; bottom: 10px; width: 86%; ">
-				<div class="progress">
-  					<div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
-				<p class="mb-1">40% funded</p>
-				</div>
-
-
-</div>
-<div class="card-footer text-muted">
-	<div class="row ">
-			<div class="col-12">
-			</div>
-			<div class="col-12">
-				<div class="row">
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Backers</p>
-						<h6 class="mt-0 mb-0"><strong>137</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Pledged</p>
-						<h6 class="mt-0 mb-0"><strong>&dollar;50,000</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Days&nbsp;Left</p>
-						<h6 class="mt-0 mb-0"><strong>7</strong></h6>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> 
-				</div>
 				
-				<div class="col-sm-3 mb-4">
-					<div class="card box">
-	<a href="project.html" >
-		<img src="http://i.expresspixel.com/unsplash.it/310/210?image=41" class="img-fluid hidden-xs-down"/>
-		<img src="http://i.expresspixel.com/unsplash.it/610/210?image=41" class="img-fluid hidden-sm-up"/>
-	</a>
-	<div class="card-block" class="pb-1" style="position: relative; padding-bottom: 60px; min-height: 250px;">
-
-				<h6><a href="project.html">iterate impactful interfaces</a></h6>
-				<p class="text-muted">By <strong><a href="project.html" class="text-muted">Ruth Diaz</a></strong></p>
-				<p class="desc">Goal: Introducing a new word into the English language/dictionary.\nReason: The beauty of the English language is the freedom to create.</p>
-
-				<div style="position: absolute; bottom: 10px; width: 86%; ">
-				<div class="progress">
-  					<div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
-				<p class="mb-1">70% funded</p>
-				</div>
 
 
-</div>
-<div class="card-footer text-muted">
-	<div class="row ">
-			<div class="col-12">
-			</div>
-			<div class="col-12">
-				<div class="row">
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Backers</p>
-						<h6 class="mt-0 mb-0"><strong>112</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Pledged</p>
-						<h6 class="mt-0 mb-0"><strong>&dollar;50,000</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Days&nbsp;Left</p>
-						<h6 class="mt-0 mb-0"><strong>1</strong></h6>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> 
-				</div>
-				
-				<div class="col-sm-3 mb-4">
-					<div class="card box">
-	<a href="project.html" >
-		<img src="http://i.expresspixel.com/unsplash.it/310/210?image=51" class="img-fluid hidden-xs-down"/>
-		<img src="http://i.expresspixel.com/unsplash.it/610/210?image=51" class="img-fluid hidden-sm-up"/>
-	</a>
-	<div class="card-block" class="pb-1" style="position: relative; padding-bottom: 60px; min-height: 250px;">
-
-				<h6><a href="project.html">envisioneer viral functionalities</a></h6>
-				<p class="text-muted">By <strong><a href="project.html" class="text-muted">Alice Long</a></strong></p>
-				<p class="desc">Zu den Artikeln der DSGVO sind die korrespondierenden Erwägungsgründe und die vergleichbaren Regelungen aus dem BDSG gegenüber gestellt</p>
-
-				<div style="position: absolute; bottom: 10px; width: 86%; ">
-				<div class="progress">
-  					<div class="progress-bar" role="progressbar" style="width: 78%" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
-				<p class="mb-1">78% funded</p>
-				</div>
-
-
-</div>
-<div class="card-footer text-muted">
-	<div class="row ">
-			<div class="col-12">
-			</div>
-			<div class="col-12">
-				<div class="row">
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Backers</p>
-						<h6 class="mt-0 mb-0"><strong>30</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Pledged</p>
-						<h6 class="mt-0 mb-0"><strong>&dollar;50,000</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Days&nbsp;Left</p>
-						<h6 class="mt-0 mb-0"><strong>4</strong></h6>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> 
-				</div>
-				
-				<div class="col-sm-3 mb-4">
-					<div class="card box">
-	<a href="project.html" >
-		<img src="http://i.expresspixel.com/unsplash.it/310/210?image=61" class="img-fluid hidden-xs-down"/>
-		<img src="http://i.expresspixel.com/unsplash.it/610/210?image=61" class="img-fluid hidden-sm-up"/>
-	</a>
-	<div class="card-block" class="pb-1" style="position: relative; padding-bottom: 60px; min-height: 250px;">
-
-				<h6><a href="project.html">incubate next-generation platforms</a></h6>
-				<p class="text-muted">By <strong><a href="project.html" class="text-muted">Jane Simmons</a></strong></p>
-				<p class="desc">Shadow School Board will provide parents & taxpayers a "how-to manual" to restore accountability to your school district's real board.</p>
-
-				<div style="position: absolute; bottom: 10px; width: 86%; ">
-				<div class="progress">
-  					<div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
-				<p class="mb-1">40% funded</p>
-				</div>
-
-
-</div>
-<div class="card-footer text-muted">
-	<div class="row ">
-			<div class="col-12">
-			</div>
-			<div class="col-12">
-				<div class="row">
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Backers</p>
-						<h6 class="mt-0 mb-0"><strong>100</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Pledged</p>
-						<h6 class="mt-0 mb-0"><strong>&dollar;50,000</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Days&nbsp;Left</p>
-						<h6 class="mt-0 mb-0"><strong>20</strong></h6>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> 
-				</div>
-				
-				<div class="col-sm-3 mb-4">
-					<div class="card box">
-	<a href="project.html" >
-		<img src="http://i.expresspixel.com/unsplash.it/310/210?image=71" class="img-fluid hidden-xs-down"/>
-		<img src="http://i.expresspixel.com/unsplash.it/610/210?image=71" class="img-fluid hidden-sm-up"/>
-	</a>
-	<div class="card-block" class="pb-1" style="position: relative; padding-bottom: 60px; min-height: 250px;">
-
-				<h6><a href="project.html">grow strategic schemas</a></h6>
-				<p class="text-muted">By <strong><a href="project.html" class="text-muted">Nicole Green</a></strong></p>
-				<p class="desc">I want to create an organization that is composed of selfless people who are dedicated to prevent HIV related deaths and transmission.</p>
-
-				<div style="position: absolute; bottom: 10px; width: 86%; ">
-				<div class="progress">
-  					<div class="progress-bar" role="progressbar" style="width: 17%" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
-				<p class="mb-1">17% funded</p>
-				</div>
-
-
-</div>
-<div class="card-footer text-muted">
-	<div class="row ">
-			<div class="col-12">
-			</div>
-			<div class="col-12">
-				<div class="row">
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Backers</p>
-						<h6 class="mt-0 mb-0"><strong>83</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Pledged</p>
-						<h6 class="mt-0 mb-0"><strong>&dollar;50,000</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Days&nbsp;Left</p>
-						<h6 class="mt-0 mb-0"><strong>29</strong></h6>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> 
-				</div>
-				
-				<div class="col-sm-3 mb-4">
-					<div class="card box">
-	<a href="project.html" >
-		<img src="http://i.expresspixel.com/unsplash.it/310/210?image=81" class="img-fluid hidden-xs-down"/>
-		<img src="http://i.expresspixel.com/unsplash.it/610/210?image=81" class="img-fluid hidden-sm-up"/>
-	</a>
-	<div class="card-block" class="pb-1" style="position: relative; padding-bottom: 60px; min-height: 250px;">
-
-				<h6><a href="project.html">incubate plug-and-play vortals</a></h6>
-				<p class="text-muted">By <strong><a href="project.html" class="text-muted">Annie Stevens</a></strong></p>
-				<p class="desc">Group of passionate and eager students gaining experience in the Stock market through research, collaboration and hard work.</p>
-
-				<div style="position: absolute; bottom: 10px; width: 86%; ">
-				<div class="progress">
-  					<div class="progress-bar" role="progressbar" style="width: 48%" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
-				<p class="mb-1">48% funded</p>
-				</div>
-
-
-</div>
-<div class="card-footer text-muted">
-	<div class="row ">
-			<div class="col-12">
-			</div>
-			<div class="col-12">
-				<div class="row">
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Backers</p>
-						<h6 class="mt-0 mb-0"><strong>142</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Pledged</p>
-						<h6 class="mt-0 mb-0"><strong>&dollar;50,000</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Days&nbsp;Left</p>
-						<h6 class="mt-0 mb-0"><strong>5</strong></h6>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> 
-				</div>
-				
-				<div class="col-sm-3 mb-4">
-					<div class="card box">
-	<a href="project.html" >
-		<img src="http://i.expresspixel.com/unsplash.it/310/210?image=91" class="img-fluid hidden-xs-down"/>
-		<img src="http://i.expresspixel.com/unsplash.it/610/210?image=91" class="img-fluid hidden-sm-up"/>
-	</a>
-	<div class="card-block" class="pb-1" style="position: relative; padding-bottom: 60px; min-height: 250px;">
-
-				<h6><a href="project.html">recontextualize 24/7 portals</a></h6>
-				<p class="text-muted">By <strong><a href="project.html" class="text-muted">Roy Jackson</a></strong></p>
-				<p class="desc">V.I.P.-Architecture shows the most iconic, the most famous and most important buildings of our planet in one book.</p>
-
-				<div style="position: absolute; bottom: 10px; width: 86%; ">
-				<div class="progress">
-  					<div class="progress-bar" role="progressbar" style="width: 51%" aria-valuenow="51" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
-				<p class="mb-1">51% funded</p>
-				</div>
-
-
-</div>
-<div class="card-footer text-muted">
-	<div class="row ">
-			<div class="col-12">
-			</div>
-			<div class="col-12">
-				<div class="row">
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Backers</p>
-						<h6 class="mt-0 mb-0"><strong>143</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Pledged</p>
-						<h6 class="mt-0 mb-0"><strong>&dollar;50,000</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Days&nbsp;Left</p>
-						<h6 class="mt-0 mb-0"><strong>15</strong></h6>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> 
-				</div>
-				
-				<div class="col-sm-3 mb-4">
-					<div class="card box">
-	<a href="project.html" >
-		<img src="http://i.expresspixel.com/unsplash.it/310/210?image=101" class="img-fluid hidden-xs-down"/>
-		<img src="http://i.expresspixel.com/unsplash.it/610/210?image=101" class="img-fluid hidden-sm-up"/>
-	</a>
-	<div class="card-block" class="pb-1" style="position: relative; padding-bottom: 60px; min-height: 250px;">
-
-				<h6><a href="project.html">e-enable mission-critical communities</a></h6>
-				<p class="text-muted">By <strong><a href="project.html" class="text-muted">Jeffrey Rose</a></strong></p>
-				<p class="desc">A collection of plays, screenplays, and photographs from the productions written by Ross Wells, Texas playwright, director, and actor.</p>
-
-				<div style="position: absolute; bottom: 10px; width: 86%; ">
-				<div class="progress">
-  					<div class="progress-bar" role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
-				<p class="mb-1">1% funded</p>
-				</div>
-
-
-</div>
-<div class="card-footer text-muted">
-	<div class="row ">
-			<div class="col-12">
-			</div>
-			<div class="col-12">
-				<div class="row">
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Backers</p>
-						<h6 class="mt-0 mb-0"><strong>1</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Pledged</p>
-						<h6 class="mt-0 mb-0"><strong>&dollar;50,000</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Days&nbsp;Left</p>
-						<h6 class="mt-0 mb-0"><strong>12</strong></h6>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> 
-				</div>
-				
-				<div class="col-sm-3 mb-4">
-					<div class="card box">
-	<a href="project.html" >
-		<img src="http://i.expresspixel.com/unsplash.it/310/210?image=111" class="img-fluid hidden-xs-down"/>
-		<img src="http://i.expresspixel.com/unsplash.it/610/210?image=111" class="img-fluid hidden-sm-up"/>
-	</a>
-	<div class="card-block" class="pb-1" style="position: relative; padding-bottom: 60px; min-height: 250px;">
-
-				<h6><a href="project.html">reinvent back-end architectures</a></h6>
-				<p class="text-muted">By <strong><a href="project.html" class="text-muted">Shirley Tucker</a></strong></p>
-				<p class="desc">a book that talks about and demonstrates a hackintosh build, the pros/cons and legal status and an analysis compared to the mac pro</p>
-
-				<div style="position: absolute; bottom: 10px; width: 86%; ">
-				<div class="progress">
-  					<div class="progress-bar" role="progressbar" style="width: 11%" aria-valuenow="11" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
-				<p class="mb-1">11% funded</p>
-				</div>
-
-
-</div>
-<div class="card-footer text-muted">
-	<div class="row ">
-			<div class="col-12">
-			</div>
-			<div class="col-12">
-				<div class="row">
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Backers</p>
-						<h6 class="mt-0 mb-0"><strong>110</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Pledged</p>
-						<h6 class="mt-0 mb-0"><strong>&dollar;50,000</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Days&nbsp;Left</p>
-						<h6 class="mt-0 mb-0"><strong>16</strong></h6>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> 
-				</div>
-				
-				<div class="col-sm-3 mb-4">
-					<div class="card box">
-	<a href="project.html" >
-		<img src="http://i.expresspixel.com/unsplash.it/310/210?image=121" class="img-fluid hidden-xs-down"/>
-		<img src="http://i.expresspixel.com/unsplash.it/610/210?image=121" class="img-fluid hidden-sm-up"/>
-	</a>
-	<div class="card-block" class="pb-1" style="position: relative; padding-bottom: 60px; min-height: 250px;">
-
-				<h6><a href="project.html">embrace B2B infrastructures</a></h6>
-				<p class="text-muted">By <strong><a href="project.html" class="text-muted">Catherine Griffin</a></strong></p>
-				<p class="desc">This magazine is purposed to allow high school students the opportunity to explore their future and determine "What's Next".</p>
-
-				<div style="position: absolute; bottom: 10px; width: 86%; ">
-				<div class="progress">
-  					<div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
-				<p class="mb-1">60% funded</p>
-				</div>
-
-
-</div>
-<div class="card-footer text-muted">
-	<div class="row ">
-			<div class="col-12">
-			</div>
-			<div class="col-12">
-				<div class="row">
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Backers</p>
-						<h6 class="mt-0 mb-0"><strong>18</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Pledged</p>
-						<h6 class="mt-0 mb-0"><strong>&dollar;50,000</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Days&nbsp;Left</p>
-						<h6 class="mt-0 mb-0"><strong>15</strong></h6>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> 
-				</div>
-				
-				<div class="col-sm-3 mb-4">
-					<div class="card box">
-	<a href="project.html" >
-		<img src="http://i.expresspixel.com/unsplash.it/310/210?image=131" class="img-fluid hidden-xs-down"/>
-		<img src="http://i.expresspixel.com/unsplash.it/610/210?image=131" class="img-fluid hidden-sm-up"/>
-	</a>
-	<div class="card-block" class="pb-1" style="position: relative; padding-bottom: 60px; min-height: 250px;">
-
-				<h6><a href="project.html">empower ubiquitous relationships</a></h6>
-				<p class="text-muted">By <strong><a href="project.html" class="text-muted">Karen Jordan</a></strong></p>
-				<p class="desc">E-Learning Plattform Fachbereich Mathematik. Bildung für jeden soll keine Idee sein. Mathe, das Haterfach Nr.1, das muss nicht sein.</p>
-
-				<div style="position: absolute; bottom: 10px; width: 86%; ">
-				<div class="progress">
-  					<div class="progress-bar" role="progressbar" style="width: 31%" aria-valuenow="31" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
-				<p class="mb-1">31% funded</p>
-				</div>
-
-
-</div>
-<div class="card-footer text-muted">
-	<div class="row ">
-			<div class="col-12">
-			</div>
-			<div class="col-12">
-				<div class="row">
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Backers</p>
-						<h6 class="mt-0 mb-0"><strong>36</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Pledged</p>
-						<h6 class="mt-0 mb-0"><strong>&dollar;50,000</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Days&nbsp;Left</p>
-						<h6 class="mt-0 mb-0"><strong>19</strong></h6>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> 
-				</div>
-				
-				<div class="col-sm-3 mb-4">
-					<div class="card box">
-	<a href="project.html" >
-		<img src="http://i.expresspixel.com/unsplash.it/310/210?image=141" class="img-fluid hidden-xs-down"/>
-		<img src="http://i.expresspixel.com/unsplash.it/610/210?image=141" class="img-fluid hidden-sm-up"/>
-	</a>
-	<div class="card-block" class="pb-1" style="position: relative; padding-bottom: 60px; min-height: 250px;">
-
-				<h6><a href="project.html">extend robust applications</a></h6>
-				<p class="text-muted">By <strong><a href="project.html" class="text-muted">Bonnie Perkins</a></strong></p>
-				<p class="desc">IWTLE is a textbook designed to teach English to adult learners new to the language starting with the fundamentals rooted in phonics.</p>
-
-				<div style="position: absolute; bottom: 10px; width: 86%; ">
-				<div class="progress">
-  					<div class="progress-bar" role="progressbar" style="width: 82%" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
-				<p class="mb-1">82% funded</p>
-				</div>
-
-
-</div>
-<div class="card-footer text-muted">
-	<div class="row ">
-			<div class="col-12">
-			</div>
-			<div class="col-12">
-				<div class="row">
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Backers</p>
-						<h6 class="mt-0 mb-0"><strong>213</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Pledged</p>
-						<h6 class="mt-0 mb-0"><strong>&dollar;50,000</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Days&nbsp;Left</p>
-						<h6 class="mt-0 mb-0"><strong>20</strong></h6>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> 
-				</div>
-				
-				<div class="col-sm-3 mb-4">
-					<div class="card box">
-	<a href="project.html" >
-		<img src="http://i.expresspixel.com/unsplash.it/310/210?image=151" class="img-fluid hidden-xs-down"/>
-		<img src="http://i.expresspixel.com/unsplash.it/610/210?image=151" class="img-fluid hidden-sm-up"/>
-	</a>
-	<div class="card-block" class="pb-1" style="position: relative; padding-bottom: 60px; min-height: 250px;">
-
-				<h6><a href="project.html">productize open-source networks</a></h6>
-				<p class="text-muted">By <strong><a href="project.html" class="text-muted">Steven West</a></strong></p>
-				<p class="desc">I am building video classes in Economics that are intuitive, visually pleasing and theoretically sound.</p>
-
-				<div style="position: absolute; bottom: 10px; width: 86%; ">
-				<div class="progress">
-  					<div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
-				<p class="mb-1">35% funded</p>
-				</div>
-
-
-</div>
-<div class="card-footer text-muted">
-	<div class="row ">
-			<div class="col-12">
-			</div>
-			<div class="col-12">
-				<div class="row">
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Backers</p>
-						<h6 class="mt-0 mb-0"><strong>49</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Pledged</p>
-						<h6 class="mt-0 mb-0"><strong>&dollar;50,000</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Days&nbsp;Left</p>
-						<h6 class="mt-0 mb-0"><strong>9</strong></h6>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> 
-				</div>
-				
-				<div class="col-sm-3 mb-4">
-					<div class="card box">
-	<a href="project.html" >
-		<img src="http://i.expresspixel.com/unsplash.it/310/210?image=161" class="img-fluid hidden-xs-down"/>
-		<img src="http://i.expresspixel.com/unsplash.it/610/210?image=161" class="img-fluid hidden-sm-up"/>
-	</a>
-	<div class="card-block" class="pb-1" style="position: relative; padding-bottom: 60px; min-height: 250px;">
-
-				<h6><a href="project.html">strategize transparent metrics</a></h6>
-				<p class="text-muted">By <strong><a href="project.html" class="text-muted">Susan Myers</a></strong></p>
-				<p class="desc">The Law of True Life, Greatness, Power and Happiness</p>
-
-				<div style="position: absolute; bottom: 10px; width: 86%; ">
-				<div class="progress">
-  					<div class="progress-bar" role="progressbar" style="width: 93%" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
-				<p class="mb-1">93% funded</p>
-				</div>
-
-
-</div>
-<div class="card-footer text-muted">
-	<div class="row ">
-			<div class="col-12">
-			</div>
-			<div class="col-12">
-				<div class="row">
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Backers</p>
-						<h6 class="mt-0 mb-0"><strong>24</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Pledged</p>
-						<h6 class="mt-0 mb-0"><strong>&dollar;50,000</strong></h6>
-					</div>
-					<div class="col-4 text-center">
-						<p class="mt-0 mb-0">Days&nbsp;Left</p>
-						<h6 class="mt-0 mb-0"><strong>15</strong></h6>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> 
-				</div>
 				 
 		</div>
 	</div>
@@ -1034,7 +285,7 @@
       </div>
         <div class="col-md-4 text-center">
             <br />
-            <a href="start.html" class="btn btn-primary btn-lg">Start your project <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+            <a href="start-project" class="btn btn-primary btn-lg">Start your project <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
         </div>
         </div>
   </div>
@@ -1048,65 +299,7 @@
 
 
      
-          <footer class="footer text-white mt-5" style=" bottom: 0; left: 0; bottom: 0;">
-  <div class="container" >
-   <div class="row mt-5">
-
-    <div class="col-12">
-      <div class="row">
-
-        <div class="col-4 col-md-3">
-         <h5 class="mt-4 mb-4">About </h5>
-         <ul class="list-unstyled">
-
-
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="account-payment.html">Payment Method</a></li>
-
-
-
-        </ul>
-      </div>
-
-      <div class="col-4 col-md-3">
-       <h5 class="mt-4 mb-4">Help</h5>
-       <ul class="list-unstyled">
-         <li><a class="transition-all navy-400 hover-navy-500" href="typography.html">FAQ</a></li>
-         <li><a class="transition-all navy-400 hover-navy-500" href="typography.html">Our Rules</a></li>
-         <li><a class="transition-all navy-400 hover-navy-500" href="contact.html">Contact Us</a></li>
-
-       </ul>
-     </div>
-
-     <div class="col-4 col-md-3">
-       <h5 class="mt-4 mb-4">Contact</h5>
-       <p>
-        BOOSTER by SUST_Wanderer<br />
-        Department of CSE<br />
-        IICT Building, SUST, Sylhet-3114
-      </p>
-    </div>
-
-    <div class="col-12 col-md-3">
-     <h5 class="mt-4 mb-4">Join us</h5>
-     <ul class="social-network social-circle">
-      <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook fa-fw"></i></a></li>
-      <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter fa-fw"></i></a></li>
-      <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin fa-fw"></i></a></li>
-    </ul>		
-  </div>
-
-
-</div>
-</div>
-
-
-</div>
-<br />			
-<br />			
-
-</div>
-</footer>
+         @include('Format.footer')
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -1177,17 +370,33 @@
                             <h4  style="color: #fff; font-weight: 100;">Login</h4>
                             <a href="#" data-dismiss="modal" style="position: absolute; top: 0; right: 0;"><i class="icon-close icons" aria-hidden="true" style="color: #fff; font-size: 26px"></i></a>
                             <div class="card mt-3" style="background: #fff; padding: 10px">
-                              <h6 style="color: #000;font-weight: 100;">Already have an account</h6>
+                            	<div class="row">
+                              <h6 style="color: #000;font-weight: 100; margin-left: 5%;">Do not have an account?</h6>
+                              <div style="margin-left: 10%;"><a data-dismiss="modal"  style="text-align: top;" href="#" data-toggle="modal" data-target=".signup-modal-lg"><strong>Sign In</strong></a></div>
+                              </div>
                                 <p>Please login to continue.</p><br />
-                                <form>
-                                    <div class="form-group row">
+                                <form method="POST" action="{{ route('login') }}">
+                                	{{ csrf_field() }}
+                                    <div class="row form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                       <div class="col-sm-12">
-                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+
+                                <!-- @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif -->
                                       </div>
                                     </div>
-                                    <div class="form-group row">
+                                    <div class="row form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                       <div class="col-sm-12">
-                                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                        <input id="password" type="password" class="form-control" name="password" required>
+
+                                <!-- @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif -->
                                       </div>
                                     </div>
                                     <div class="form-group row">
@@ -1195,7 +404,7 @@
                                       <div class="col-sm-10">
                                         <div class="form-check">
                                           <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox"> Remember me
+                                            <input class="form-check-input" type="checkbox" {{ old('remember') ? 'checked' : '' }}> Remember me
                                           </label>
                                         </div>
                                       </div>
@@ -1203,15 +412,28 @@
                                     <br /><br />
                                     <div class="form-group row">
                                       <div class="offset-sm-3 col-sm-6 text-center">
-                                        <a href="account-dashboard.html" class="btn btn-primary btn-block">Sign in</a>
+                                      	
+                                        <button type="submit" class="btn btn-primary btn-block">Sign in
+                                        </button>
                                       </div>
                                     </div>
                                     <div class="form-group row">
                                       <div class="offset-sm-2 col-sm-8 text-center">
-                                        <a href="" class="mt-2">Forgotten your password</a>
+                                        <a href="{{ route('password.request') }}" class="mt-2">Forgotten your password</a>
                                       </div>
                                     </div>
-                                  </form>                            
+                                  </form>     
+
+
+
+
+                              
+
+
+
+
+
+
                               </div>	 		
                         </div>	 		
                     </div>	 		
@@ -1241,33 +463,54 @@
                               <h6 style="color: #000">New to CrowdFunding?</h6>
                                 <p>A crowdfunding account is required to continue.</p>
 
-                                <form role="form">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control " placeholder="Enter email">
+                                <form role="form" method="POST" action="{{ route('register') }}">
+                                	{{ csrf_field() }}
+                                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                        <input id="email" type="email" class="form-control" name="email" placeholder="Email" required autofocus>
+
+                                <!-- @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif -->
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
-                                          <div class="form-group">
-                                              <input type="text" class="form-control"placeholder="First name">
+                                          <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                              <input id="first_name" type="text" class="form-control" name="first_name" placeholder="First Name" required>
+
+                                <!-- @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif -->
                                           </div>
                                         </div>
                                         
                                         <div class="col-6">
                                           <div class="form-group">
-                                              <input type="text" class="form-control"placeholder="Last name">
+                                              <input id="last_name" type="text" class="form-control" name="last_name" placeholder="Last Name" required>
+
+                               
                                           </div>
                                         </div>
                                       </div>
                                     <div class="row">
                                         <div class="col-6">
-                                          <div class="form-group">
-                                              <input type="password" class="form-control"placeholder="Password">
+                                          <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                              <input id="password" type="password" class="form-control" placeholder="password" name="password" required>
+
+                                <!-- @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif -->
                                           </div>
                                         </div>
                                         
                                         <div class="col-6">
                                           <div class="form-group">
-                                              <input type="password" class="form-control"placeholder="Confirm password">
+                                              <input id="password-confirm" type="password" placeholder="Confirm Password" class="form-control" name="password_confirmation" required>
                                           </div>
                                         </div>
                                       </div>
@@ -1275,7 +518,7 @@
                                   <div class="text-center">
                                     <br /><br />
                                     <p>By signing up you agree to our terms and conditions and privacy policy</p>                          
-                                    <a href="account-dashboard.html" class="btn btn-primary">Create account</a><br /><br />
+                                    <button type="submit" class="btn btn-primary">Create account</button><br /><br />
                                     </div>
                                 </form>
 
@@ -1291,6 +534,10 @@
     </div>
   </div>
 </div>
+
+
+
+
 <script>
 
 

@@ -15,7 +15,7 @@
       href="https://scontent.fdac6-1.fna.fbcdn.net/v/t35.0-12/23698614_1340578692737598_1074966544_o.png?_nc_cat=0&oh=aeba2a938682be4c93c51c2189d7506f&oe=5ACC7135" />
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="canonical" href="/edit-accounts.html">
+  <link rel="canonical" href="/edit-accounts">
   <link rel="alternate" type="application/rss+xml" title="CrowdFundr - by ExpressPixel" href="/feed.xml">
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
   <script src="javascripts/scrollPosStyler.js"></script>
@@ -49,21 +49,21 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
-  <a class="navbar-brand" href="index.html">BOOSTER</a>
+  <a class="navbar-brand" href="index">BOOSTER</a>
 
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto" >
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="explore.html">Explore</a>
+        <a class="nav-link" href="explore">Explore</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="edit.html">Start a project</a>
+        <a class="nav-link" href="edit">Start a project</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="about.html">About us</a>
+        <a class="nav-link" href="about">About us</a>
       </li>
     </ul>
     <ul class="navbar-nav" >
@@ -106,13 +106,13 @@
 
     <div class="col-sm-12">
       <ul class="breadcrumb">
-        <li><a href="edit.html">Basics</a></li>
-        <li><a href="edit-story.html">Story</a></li>
-        <!--  <li><a href="edit-perks.html">Perks</a></li> -->
+        <li><a href="edit">Basics</a></li>
+        <li><a href="edit-story">Story</a></li>
+        <!--  <li><a href="edit-perks">Perks</a></li> -->
 
-        <li><a  href="edit-about.html">About you</a></li>
-        <li><a style="font-weight: bold " href="edit-accounts.html">Account</a></li>
-        <li><a  href="edit-updates.html">Updates</a></li>
+        <li><a  href="edit-about">About you</a></li>
+        <li><a style="font-weight: bold " href="edit-accounts">Account</a></li>
+        <li><a  href="edit-updates">Updates</a></li>
 
       </ul>
 
@@ -150,8 +150,8 @@
                     <span class="input-group-btn">
                       <button class="btn btn-secondary" type="button">Your name</button>
                     </span>
-                    <input type="text" class="form-control" placeholder="First name">
-                    <input type="text" class="form-control" placeholder="Last name">
+                    <input id="First_name" type="text" class="form-control" placeholder="First name">
+                    <input id="Last_name" type="text" class="form-control" placeholder="Last name">
                   </div>
                 </div>
               </div>
@@ -214,10 +214,10 @@
 
                 </div>
                 <div class="col-8">
-      <input type="text" class="form-control" placeholder="House Number and street name">
-            <input type="text" class="form-control" placeholder="Town">
-      <input type="text" class="form-control" placeholder="Postcode/ZIP code">
-      <input type="text" class="form-control" placeholder="United Kingdom">
+      <input id="house_no" type="text" class="form-control" placeholder="House Number and street name">
+            <input id="town" type="text" class="form-control" placeholder="Town">
+      <input id="postcode" type="text" class="form-control" placeholder="Postcode/ZIP code">
+      <input id="country" type="text" class="form-control" placeholder="United Kingdom">
                 </div>
                 </div>
 
@@ -232,7 +232,7 @@
 
               <div class="row mt-3">
                 <div class="col-12">
-                    <a href="edit.html" class="btn btn-primary pull-right">Save</a>
+                    <a href="edit" class="btn btn-primary pull-right">Save</a>
 
               </div>
               </div>
@@ -260,7 +260,7 @@
     <tr>
       <th scope="row">
         <label class="custom-control custom-radio">
-        <input name="radio" type="radio" class="custom-control-input" checked="">
+        <input id="" name="radio" type="radio" class="custom-control-input" checked="">
         <span class="custom-control-indicator"></span>
       </label>
     </th>
@@ -372,14 +372,14 @@
         
         				        
 					          <div class="card box">
-	<a href="project.html" >
+	<a href="project" >
 		<img src="http://i.expresspixel.com/unsplash.it/310/210?image=11" class="img-fluid hidden-xs-down"/>
 		<img src="http://i.expresspixel.com/unsplash.it/610/210?image=11" class="img-fluid hidden-sm-up"/>
 	</a>
 	<div class="card-block" class="pb-1" style="position: relative; padding-bottom: 60px; min-height: 250px;">
 
-				<h6><a href="project.html">architect frictionless supply-chains</a></h6>
-				<p class="text-muted">By <strong><a href="project.html" class="text-muted">Jonathan Howell</a></strong></p>
+				<h6><a href="project">architect frictionless supply-chains</a></h6>
+				<p class="text-muted">By <strong><a href="project" class="text-muted">Jonathan Howell</a></strong></p>
 				<p class="desc">MTS ASL Curriculum Workbook is a reproducible study book to build Early Literacy and Academic skills for primary school age children.</p>
 
 				<div style="position: absolute; bottom: 10px; width: 86%; ">
@@ -431,8 +431,8 @@
 <nav class="navbar fixed-bottom navbar-light bg-faded" style="background: #fff; border-top: 1px solid #eee">
   <div class="container">
 
-    <a href="edit.html" class="btn btn-primary btn-lg float-right">Save campaign</a>
-    <a href="edit.html" class="btn btn-link btn-lg float-right">Discard changes</a>
+    <a href="edit" class="btn btn-primary btn-lg float-right">Save campaign</a>
+    <a href="edit" class="btn btn-link btn-lg float-right">Discard changes</a>
 
   </div>
 </nav>
@@ -483,7 +483,7 @@
                                     <br /><br />
                                     <div class="form-group row">
                                       <div class="offset-sm-3 col-sm-6 text-center">
-                                        <a href="account-dashboard.html" class="btn btn-primary btn-block">Sign in</a>
+                                        <a href="account-dashboard" class="btn btn-primary btn-block">Sign in</a>
                                       </div>
                                     </div>
                                     <div class="form-group row">
@@ -555,7 +555,7 @@
                                   <div class="text-center">
                                     <br /><br />
                                     <p>By signing up you agree to our terms and conditions and privacy policy</p>                          
-                                    <a href="account-dashboard.html" class="btn btn-primary">Create account</a><br /><br />
+                                    <a href="account-dashboard" class="btn btn-primary">Create account</a><br /><br />
                                     </div>
                                 </form>
 

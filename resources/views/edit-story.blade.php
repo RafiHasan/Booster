@@ -5,97 +5,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Pricing</title>
+  <title> Booster</title>
   <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search resu...">
 
-  <!-- favicon -->
 
-  <link rel="icon" 
-      type="image/png" 
-      href="https://scontent.fdac6-1.fna.fbcdn.net/v/t35.0-12/23698614_1340578692737598_1074966544_o.png?_nc_cat=0&oh=aeba2a938682be4c93c51c2189d7506f&oe=5ACC7135" />
+<!-- favicon -->
+@include('Format.css_js_file')
   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="canonical" href="/edit-story.html">
-  <link rel="alternate" type="application/rss+xml" title="CrowdFundr - by ExpressPixel" href="/feed.xml">
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-  <script src="javascripts/scrollPosStyler.js"></script>
-  <!-- JavaScript -->
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.min.js" ></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.4/vue.min.js"></script>
-
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
-
-  <link rel="stylesheet" href="css/main.css">
+  
 
 
 
 </head>
   <body>
 
-    <nav class="navbar navbar-toggleable-sm navbar-light bg-primary fixed-top"  id="navbar" v-cloak >
-  <div class="container top-nav" v-if="!search">
-
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-</button>
-  <a class="navbar-brand" href="index.html">BOOSTER</a>
-
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto" >
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="explore.html">Explore</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="edit.html">Start a project</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about.html">About us</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav" >
-      <li class="nav-item hidden-sm-down">
-        <a class="nav-link" href="#" v-on:click.prevent="showSearchBar"><i class="fa fa-search" aria-hidden="true"></i></a>
-      </li>
-      <li class="nav-item hidden-sm-up">
-        <a class="nav-link" href="#" v-on:click.prevent="showSearchBar">Search</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" data-toggle="modal" data-target=".login-modal-lg">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"href="#" data-toggle="modal" data-target=".signup-modal-lg">Sign up</a>
-      </li>
-    </ul>
-    <form class="form-inline" style="display: none">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-    </div>
-
-    <div class="container" v-else>
-  <div class="input-group search-bar">
-  <span class="input-group-addon"><i class="icon-magnifier icons"></i></span>
-  <input type="text" class="form-control form-control-lg" placeholder="Search">
-  <span class="input-group-addon" ><a href="" class="text-muted" v-on:click.prevent="hideSearchBar"><i class="icon-close icons"></i></a></span>
-</div>
-    </div>
-
-</nav>
+    @include('Format.header')
 
     <br />
 <br />
@@ -106,13 +30,11 @@
 
     <div class="col-sm-12">
       <ul class="breadcrumb">
-        <li><a href="edit.html">Basics</a></li>
-        <li><a style="font-weight: bold " href="edit-story.html">Story</a></li>
-        <!--  <li><a href="edit-perks.html">Perks</a></li> -->
-
-        <li><a href="edit-about.html">About you</a></li>
-        <li><a href="edit-accounts.html">Account</a></li>
-                <li><a  href="edit-updates.html">Updates</a></li>
+  <li><a href={{url('/start-project')}}>Basics</a></li>
+  <li><a style="font-weight: bold " href="{{url('/edit-story')}}">Story</a></li>
+<!--  <li><a href="edit-perks.html">Perks</a></li> -->
+  <li><a href="{{url('/edit-about')}}">About you</a></li>
+          
 
       </ul>
 
@@ -124,7 +46,8 @@
       <p>Make a great first impression with your project’s title and image, and set your funding goal, campaign duration, and
         project category.</p>
 
-      <form>
+      <form role="form" method="POST" action="{{ route('edit_story') }}" enctype="multipart/form-data">
+        {{ csrf_field() }}
 
 
         <div class="form-group light-blue">
@@ -132,12 +55,11 @@
           <div class="form-group row">
             <label for="example-text-input" class="col-3 col-form-label">Project video</label>
             <div class="col-9">
-              <div style="border: 1px dashed #000; background: #fff; width: 100%; display: block; padding: 20px;" class="text-center">
-                <p class="text-center">
-                  <a href=""><strong>Choose an image from your computer</strong></a>
-                </p>
-                <p>This is the main image associated with your project. Make it count!</p>
-                <p>At least <strong>1024x576 pixels</strong> • 16:9 aspect ratio</p>
+              <div class="input-group  input-group">
+                <span class="input-group-btn">
+
+                </span>
+                <input id="video_url" name="video" type="text" class="form-control" placeholder="Project video URL..." required>
               </div>
               <br />
               <p>Have fun – add a video! Projects with a video have a much higher chance of success. For a dose of inspiration,
@@ -146,30 +68,78 @@
           </div>
         </div>
 
-        <div class="form-group light-blue">
 
+
+        <div id="demoDiv" class="form-group light-blue">
+        <div class="form-group light-blue">
           <div class="form-group row">
             <label for="example-text-input" class="col-3 col-form-label">Prototype gallery</label>
             <div class="col-9">
               <p class="mt-1">Creating a physical product? Be sure to add explicit demos of working prototypes. Photos and videos are always
                 a great way to share your creative process and show backers what you’ve accomplished so far.</p>
-              <a href="" class="btn btn-primary">Edit gallery</a>
+              <div style="border: 1px dashed #000; background: #fff; width: 100%; display: block; padding: 10px;" class="text-center">
+
+                <img id="blah" src="#" alt="your image" />
+                <p id="dhur1" style="margin-top:  15px;">This is the main image associated with your project. Make it count!</p>    
+                <p id="dhur2">At least <strong>1024x576 pixels</strong> • 16:9 aspect ratio</p>   
+                
+                  <input type="file" class="btn btn-primary" name="fileupload[]"  id="fileupload" style="color: #fff;" required>
+                
+              </div>
+
+<script>
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah').attr('src', e.target.result);
+            $('#blah').attr('style','width:100%; height:80%;');
+            document.getElementById('dhur1').innerHTML = "";
+            document.getElementById('dhur2').innerHTML = "";
+
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#fileupload").change(function(){
+    readURL(this);
+});
+</script>
             </div>
           </div>
+          
+
+
+
+
         </div>
 
         <div class="form-group light-blue">
-
           <div class="form-group row">
             <label for="example-text-input" class="col-3 col-form-label">Project description</label>
             <div class="col-9">
               <p class="mt-1">Use your project description to share more about what you’re raising funds to do and how you plan to pull it
                 off. It’s up to you to make the case for your project.</p>
-              <textarea rows="11" class="form-control"></textarea>
+              <textarea id="project_desc" name="description[]" rows="11" class="form-control" required></textarea>
             </div>
           </div>
         </div>
+        </div>
 
+        <div id="dynamicDiv" class="form-group light-blue">
+          
+        </div>
+
+        <div >
+          <a id="addBtn" href="#" role="button" aria-expanded="true" onclick=" addDiv()">
+          <i class="fa fa-plus-circle" style="position: relative; left: 340px; font-size: 40px;"></i>
+          </a>
+        </div>
+        
+      </br>
         <div class="form-group light-blue">
 
           <div class="form-group row">
@@ -187,7 +157,7 @@
 
               <p>Being fully transparent and addressing these potential challenges from the start will help backers understand
                 that your project is a work in progress, and that you’ve thought through all of the possible outcomes.</p>
-              <textarea rows="5" class="form-control"></textarea>
+              <textarea id="project_risks" name="risks" rows="5" class="form-control" required></textarea>
             </div>
           </div>
         </div>
@@ -201,7 +171,9 @@
             </div>
           </div>
         </div>
-</form>
+
+
+
     </div>
 
     
@@ -218,14 +190,14 @@
         
         				        
 					          <div class="card box">
-	<a href="project.html" >
+	<a href="{{url('/project')}}" >
 		<img src="http://i.expresspixel.com/unsplash.it/310/210?image=11" class="img-fluid hidden-xs-down"/>
 		<img src="http://i.expresspixel.com/unsplash.it/610/210?image=11" class="img-fluid hidden-sm-up"/>
 	</a>
 	<div class="card-block" class="pb-1" style="position: relative; padding-bottom: 60px; min-height: 250px;">
 
-				<h6><a href="project.html">architect frictionless supply-chains</a></h6>
-				<p class="text-muted">By <strong><a href="project.html" class="text-muted">Jonathan Howell</a></strong></p>
+				<h6><a href="{{url('/project')}}">architect frictionless supply-chains</a></h6>
+				<p class="text-muted">By <strong><a href="{{url('/project')}}" class="text-muted">Jonathan Howell</a></strong></p>
 				<p class="desc">MTS ASL Curriculum Workbook is a reproducible study book to build Early Literacy and Academic skills for primary school age children.</p>
 
 				<div style="position: absolute; bottom: 10px; width: 86%; ">
@@ -276,13 +248,13 @@
 <nav class="navbar fixed-bottom navbar-light bg-faded" style="background: #fff; border-top: 1px solid #eee">
   <div class="container">
 
-    <a href="edit.html" class="btn btn-primary btn-lg float-right">Save campaign</a>
-    <a href="edit.html" class="btn btn-link btn-lg float-right">Discard changes</a>
+    <input type="submit" class="btn btn-primary btn-lg float-right" >
+    <a href="{{url('/start-project')}}" class="btn btn-link btn-lg float-right">Discard changes</a>
 
   </div>
 </nav>
 
-
+</form>
     
 
 
@@ -328,7 +300,7 @@
                                     <br /><br />
                                     <div class="form-group row">
                                       <div class="offset-sm-3 col-sm-6 text-center">
-                                        <a href="account-dashboard.html" class="btn btn-primary btn-block">Sign in</a>
+                                        <a href="{{url('/')}}" class="btn btn-primary btn-block">Sign in</a>
                                       </div>
                                     </div>
                                     <div class="form-group row">
@@ -400,7 +372,7 @@
                                   <div class="text-center">
                                     <br /><br />
                                     <p>By signing up you agree to our terms and conditions and privacy policy</p>                          
-                                    <a href="account-dashboard.html" class="btn btn-primary">Create account</a><br /><br />
+                                    <a href="{{url('/')}}" class="btn btn-primary">Create account</a><br /><br />
                                     </div>
                                 </form>
 
@@ -435,5 +407,35 @@ var app = new Vue({
 })
 
 </script>
+
+<script>
+  function addDiv(){
+    var x = document.getElementById("demoDiv").innerHTML;
+    var y = document.getElementById('dynamicDiv');
+    var z = document.createElement("div");
+    z.innerHTML = x;
+   // var btn = '<button id="delbtn" class="btn btn-danger" style="float-right" onclick="event.preventDefault(); y.removeChild();" />';
+
+    // btn.innerHTML = "Delete";
+    // btn.id = "delbtn";
+    // btn.className = "btn btn-danger";
+    // btn.style = "float-right";
+    // btn.onclick = "y;";
+    //z.appendChild(btn);
+    y.appendChild(z);
+    //console.log(z.innerHTML);
+
+   // console.log(btn);
+
+    
+
+  }
+
+  function delDiv(){
+    var x = document.getElementById("demoDiv").innerHTML;
+    y.appendChild(z);
+  }
+</script>
+
   </body>
 </html>
