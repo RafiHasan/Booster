@@ -90,7 +90,7 @@
               
             </div>
             <div class="col col-4 ">
-              <img id="hidden_profile_img" class="img-fluid rounded-circle" src="https://scontent.fdac6-1.fna.fbcdn.net/v/t1.0-9/18838835_1359536117473852_3797026120332315532_n.jpg?_nc_cat=0&oh=2b8cebc8dd8ccd342efb11608b2030e7&oe=5B71A097" style=" background-size: cover; ">
+              <img id="hidden_profile_img" class="img-fluid rounded-circle" src="/default/profiledefault.png" style=" background-size: cover; ">
 
               <div  class="info" style="padding-top: 30px;text-align: center; vertical-align: middle;">
                 <h6 id="hidden_profile_uni" style="border-bottom-width:.25px;border-bottom-color:#373a3c;border-bottom-style: groove;">University : SUST</h6>

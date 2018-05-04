@@ -177,9 +177,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/showProfile', ['as'=>'showProfile','uses'=>'HomeController@showProfile']);
 
 
+Route::post('/pay', ['as'=>'pay','uses'=>'paymentcontroler@pay']);
+
 Route::post('/addCard','HomeController@addCard');
 
-Route::get('/pay','paymentcontroler@pay');
+
 
 Route::get('/about-us', function () {
     

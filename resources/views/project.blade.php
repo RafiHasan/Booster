@@ -502,9 +502,15 @@ var i;
 								</div>	
 								@endforeach
 							</div>
-
-							<a href="/pay" class="btn btn-lg btn-primary btn-block">Back this project</a><br />
-
+							<form method="POST" action="{{ route('pay') }}">
+								{{ csrf_field() }}
+								<div>
+								<input type="number" name="money" class="form-control form-control-lg" required>
+							</div>
+							<div>
+								<input type="submit"  class="btn btn-lg btn-primary btn-block" value="Back this project"></div>
+							<!-- <a href="/pay" class="btn btn-lg btn-primary btn-block">Back this project</a><br /> -->
+						</form>
 						</div>
 
 					</div>
