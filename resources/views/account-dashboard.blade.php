@@ -149,7 +149,7 @@
 <br />
 <br />
 
-<form method="POST" action="{{ route('edit') }}" enctype="multipart/form-data">
+<form >
   <fieldset >
 
                     <div class="row">

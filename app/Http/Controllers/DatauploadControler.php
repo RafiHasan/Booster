@@ -102,7 +102,7 @@ $request->session()->get('dataid');
         array('user_id'=>$user_id,'subcategory'=>$project_category,'title'=>$project_title,'blurb'=>$project_blurb,'category'=>$project_subcategory2,'location'=>$project_location,'duration'=>$funding_duration,'goal'=>$funding_goal,'image'=>'upload'.'/'.$user_id.$input.'.'.$fileupload->getClientOriginalExtension())
     );
 
-
+if($collab_id!=null)
  for($i=0;$i<sizeof($collab_id);$i++)
 {
 

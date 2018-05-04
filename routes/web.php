@@ -96,7 +96,7 @@ if($id=='All Category')
 {
     return redirect('explore');
 }
-    $data = DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal')->where(['category'=>$id])->orderBy('id', 'asc')->get();
+    $data = DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal','video')->where(['category'=>$id])->whereNotNull('video')->orderBy('id', 'asc')->get();
 
     return view('explore')->with( 'data', $data );
 });
