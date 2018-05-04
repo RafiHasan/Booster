@@ -33,9 +33,9 @@
   <li><a href=""}>Basics</a></li>
   <li><a style="font-weight: bold " href="{{url('/edit-story')}}">Story</a></li>
 <!--  <li><a href="edit-perks.html">Perks</a></li> -->
-  @if(Auth::user()->biography==null)
+  
           <li><a href="{{url('/edit-about')}}">About you</a></li>
-          @endif
+          
           
 
       </ul>
