@@ -534,15 +534,9 @@ var i;
                       
                     
                     <input type="hidden" name="desc" value="{{$project[0]->id}}">
-                    <input type="hidden" name="success_url" value="{{url('/')}}/showproject">
-                    <input type="hidden" name="fail_url" value = "{{url('/')}}/showproject">
-                    <input type="hidden" name="cancel_url" value = "{{url('/')}}/showproject">
-
-
-
-
-
-								raqibul
+                    <input type="hidden" name="success_url" value="http://www.boosterbd.xyz">
+                    <input type="hidden" name="fail_url" value = "http://www.boosterbd.xyz">
+                    <input type="hidden" name="cancel_url" value = "http://www.boosterbd.xyz">
 
 
 								<div>
