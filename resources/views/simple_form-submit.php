@@ -6,14 +6,14 @@
 date_default_timezone_set('Asia/Dhaka');
 //Generate Unique Transaction ID
 function rand_string( $length ) {
-	$chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";	
+     $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";  
 $str="";
-	$size = strlen( $chars );
-	for( $i = 0; $i < $length; $i++ ) {
-		$str .= $chars[ rand( 0, $size - 1 ) ];
-	}
+     $size = strlen( $chars );
+     for( $i = 0; $i < $length; $i++ ) {
+          $str .= $chars[ rand( 0, $size - 1 ) ];
+     }
 
-	return $str;
+     return $str;
 }
 $cur_random_value=rand_string(10);
 
@@ -24,9 +24,9 @@ $cur_random_value=rand_string(10);
   
   
              
-                    <form style='margin:0 auto; text-align:center;' action="http://secure.aamarpay.com/index.php" method="post" name="form1">
+                    <form style='margin:0 auto; text-align:center;' action="https://secure.aamarpay.com/index.php" method="post" name="form1">
                     <table border="0" cellpadding="4" cellspacing="2" align="center" style="border-collapse:collapse;">
-                    <input type="hidden" name="store_id" value="boosterbd">
+                    <input type="hidden" name="store_id" value=" boosterbd">
                     <input type="hidden" name="signature_key" value="86ced6c53766abe68e0274094ea9aaa0">
                    
                     </td></tr>
@@ -54,9 +54,9 @@ $cur_random_value=rand_string(10);
                     <tr><td>Processing Charge: </td><td><input type="text" name="amount_processingfee" value="0"></td></tr>
                     
                     <tr><td>Product Description: </td><td><input type="text" name="desc" value="Products Name Payment"></td></tr>
-                    <input type="hidden" name="success_url" value="http://pay.workupdate.club/payment_success_page.php">
-                    <input type="hidden" name="fail_url" value = "http://pay.workupdate.club/payment_fail_page.php">
-                    <input type="hidden" name="cancel_url" value = "http://pay.workupdate.club/payment_fail_page.php">
+                    <input type="hidden" name="success_url" value="http://youdomain.com/payment_success_page.php">
+                    <input type="hidden" name="fail_url" value = "http://yourdomain.com/payment_fail_page.php">
+                    <input type="hidden" name="cancel_url" value = "http://yourdomain.com/payment_fail_page.php">
                     
                     
                     

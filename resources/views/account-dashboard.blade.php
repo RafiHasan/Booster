@@ -149,7 +149,7 @@
 <br />
 <br />
 
-<form>
+<form method="POST" action="{{ route('edit') }}" enctype="multipart/form-data">
   <fieldset >
 
                     <div class="row">
@@ -157,7 +157,7 @@
                             <div class="form-group row">
                                 <label for="example-text-input" class="col-3 col-md-2 col-form-label">Email</label>
                                 <div class="col-9 col-md-10">
-                                    <input class="form-control" type="email" placeholder="{{Auth::user()->email}}" id="example-text-input">
+                                    <input class="form-control" name="email" type="email" placeholder="{{Auth::user()->email}}" id="example-text-input" required>
                                     <p class="form-text text-muted">
                                         Your name is displayed on your profile.
                                     </p>
@@ -210,14 +210,14 @@
                               function changePass(){
                                 var passField = document.getElementById('changePassDiv');
                                 var passDiv = document.getElementById('passDiv');
-                                var inputPass = '<input class="form-control" type="password" value="" id="newPass">';
+                                var inputPass = '<input class="form-control" type="password" value="" id="newPass" required>';
 
                                 passField.innerHTML = inputPass;
 
                                 var newDiv = document.createElement('div');
                                 newDiv.className = 'form-group row';
                                 var label = '<label for="confirmPass" class="col-3 col-md-2 col-form-label">Confirm Password</label>';
-                                var confirmPass = '<div class="col-9 col-md-10"><input class="form-control" type="password" value="" id="confirmPass" name="confirmPass"></div>';
+                                var confirmPass = '<div class="col-9 col-md-10"><input class="form-control" type="password" value="" id="confirmPass" name="confirmPass" required></div>';
                                 newDiv.innerHTML = label + confirmPass;
                                 console.log(passField.innerHTML);
                                 console.log(newDiv.innerHTML);

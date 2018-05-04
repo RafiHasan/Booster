@@ -148,7 +148,7 @@
                             <div class="form-group row">
                                 <label for="example-text-input" class="col-3 col-md-2 col-form-label">Name</label>
                                 <div class="col-9 col-md-10">
-                                    <input class="form-control" type="text" placeholder="{{Auth::user()->first_name.' '.Auth::user()->last_name}}" id="example-text-input">
+                                    <input class="form-control" type="text" name="name" placeholder="{{Auth::user()->first_name.' '.Auth::user()->last_name}}" id="example-text-input">
                                     <p class="form-text text-muted">
                                         Your name is displayed on your profile.
                                     </p>
@@ -174,8 +174,8 @@
                             <div class="form-group row">
                                 <label for="example-email-input" class="col-3 col-md-2 col-form-label">Biography</label>
                                 <div class="col-9 col-md-10">
-                                    <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="{{Auth::user()->biography}}"></textarea>
-                                    <p class="form-text text-muted">
+                                    <textarea class="form-control" id="exampleTextarea" name="biography" rows="3" placeholder="{{Auth::user()->biography}}"></textarea>
+                                    <p class="form-text text-muted" >
                                         We suggest a short bio. If it's 300 characters or less it'll look great on your profile.
                                     </p>
                                 </div>
@@ -189,7 +189,7 @@
                             <div class="form-group row">
                                 <label for="example-search-input" class="col-3 col-md-2 col-form-label">Location</label>
                                 <div class="col-9 col-md-10">
-                                    <input class="form-control" type="search" placeholder="{{Auth::user()->location}}" id="example-search-input">
+                                    <input class="form-control" type="search" name="location" placeholder="{{Auth::user()->location}}" id="example-search-input">
                                     <p class="form-text text-muted">
                                         Please enter the city and country you live in only
                                     </p>
