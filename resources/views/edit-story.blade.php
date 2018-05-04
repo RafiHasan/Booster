@@ -30,10 +30,12 @@
 
     <div class="col-sm-12">
       <ul class="breadcrumb">
-  <li><a href={{url('/start-project')}}>Basics</a></li>
+  <li><a href=""}>Basics</a></li>
   <li><a style="font-weight: bold " href="{{url('/edit-story')}}">Story</a></li>
 <!--  <li><a href="edit-perks.html">Perks</a></li> -->
-  <li><a href="{{url('/edit-about')}}">About you</a></li>
+  @if(Auth::user()->biography==null)
+          <li><a href="{{url('/edit-about')}}">About you</a></li>
+          @endif
           
 
       </ul>
@@ -59,7 +61,7 @@
                 <span class="input-group-btn">
 
                 </span>
-                <input id="video_url" name="video" type="text" class="form-control" placeholder="Project video URL..." required>
+                <input id="video_url" name="video" type="text" class="form-control" placeholder="Project video URL..." maxlength="100" required>
               </div>
               <br />
               <p>Have fun – add a video! Projects with a video have a much higher chance of success. For a dose of inspiration,
@@ -123,7 +125,7 @@ $("#fileupload").change(function(){
             <div class="col-9">
               <p class="mt-1">Use your project description to share more about what you’re raising funds to do and how you plan to pull it
                 off. It’s up to you to make the case for your project.</p>
-              <textarea id="project_desc" name="description[]" rows="11" class="form-control" required></textarea>
+              <textarea id="project_desc" name="description[]" rows="11" class="form-control" maxlength="2000" required></textarea>
             </div>
           </div>
         </div>
@@ -157,7 +159,7 @@ $("#fileupload").change(function(){
 
               <p>Being fully transparent and addressing these potential challenges from the start will help backers understand
                 that your project is a work in progress, and that you’ve thought through all of the possible outcomes.</p>
-              <textarea id="project_risks" name="risks" rows="5" class="form-control" required></textarea>
+              <textarea id="project_risks" name="risks" rows="5" class="form-control" maxlength="2000" required></textarea>
             </div>
           </div>
         </div>

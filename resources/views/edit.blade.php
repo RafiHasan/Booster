@@ -31,10 +31,11 @@
       <div class="col-sm-12">
         <ul class="breadcrumb">
           <li><a style="font-weight: bold " href={{url('/start-project')}}>Basics</a></li>
-          <li><a href="{{url('/edit-story')}}">Story</a></li>
+          <li><a href="" >Story</a></li>
           <!--  <li><a href="edit-perks">Perks</a></li> -->
+          @if(Auth::user()->biography==null)
           <li><a href="{{url('/edit-about')}}">About you</a></li>
-
+          @endif
 
         </ul>
 
@@ -93,7 +94,7 @@ $("#fileupload").change(function(){
           </div>
           <div class="form-group light-blue">
             <label for="exampleInputEmail1">Project title</label>
-            <input name="project_title" type="text" class="form-control form-control-lg" aria-describedby="emailHelp" placeholder="Title of the Project." required >
+            <input name="project_title" type="text" class="form-control form-control-lg" aria-describedby="emailHelp" placeholder="Title of the Project." maxlength="100" required >
             <p class="form-text text-muted">
               Our search looks through words from your project title and blurb, so make them clear and descriptive of what you’re making. Your profile name will be searchable, too.<br />
 
@@ -102,7 +103,7 @@ $("#fileupload").change(function(){
           </div>
           <div class="form-group light-blue">
             <label for="exampleInputEmail1">Short blurb</label>
-            <textarea name="project_blurb" class="form-control form-control-lg" rows="3"></textarea>
+            <textarea name="project_blurb" class="form-control form-control-lg" rows="3" maxlength="500"></textarea>
             <p id="passwordHelpBlock" class="form-text text-muted">
               Give people a sense of what you’re doing. Skip “Help me” and focus on what you’re making.
 
@@ -144,7 +145,7 @@ $("#fileupload").change(function(){
                 </select>
               </div>
               <div class="col-6">
-                <input name="project_category" style="margin-bottom: 15px;" type="text" class="form-control form-control-lg"  aria-describedby="emailHelp" placeholder="Sub-category" required>
+                <input name="project_category" style="margin-bottom: 15px;" type="text" class="form-control form-control-lg"  aria-describedby="emailHelp" placeholder="Sub-category" maxlength="100" required>
               </div>
               <div class="col-6">
               </div>
@@ -155,13 +156,13 @@ $("#fileupload").change(function(){
                 <span class="input-group-btn">
 
                 </span>
-                <input name="project_location" type="text" class="form-control" placeholder="Project location..." required>
+                <input name="project_location" type="text" class="form-control" placeholder="Project location..." maxlength="100" required>
               </div>
             </div>
             <div class="form-group light-blue">
               <label for="exampleInputEmail1">Funding duration</label>
               <div class="input-group">
-                <input name="funding_duration"  type="number" class="form-control form-control-lg" placeholder="" aria-describedby="basic-addon2" required>
+                <input name="funding_duration"  type="number" class="form-control form-control-lg" placeholder="" aria-describedby="basic-addon2" maxlength="100" required>
                 <span class="input-group-addon" id="basic-addon2">number of days</span>
               </div>
               <p id="passwordHelpBlock" class="form-text text-muted">
@@ -171,7 +172,7 @@ $("#fileupload").change(function(){
             <div class="form-group light-blue">
               <label for="exampleInputEmail1">Funding goal</label>
               <div class="input-group  col-4 pl-0">
-                <input name="funding_goal" type="number" class="form-control form-control-lg" placeholder=""  aria-describedby="basic-addon2" required>
+                <input name="funding_goal" type="number" class="form-control form-control-lg" placeholder=""  aria-describedby="basic-addon2" maxlength="100" required>
                 <span class="input-group-addon" id="basic-addon2" style="font-size: x-large"><strong>৳</strong></span>
               </div>
               <p id="passwordHelpBlock" class="form-text text-muted">

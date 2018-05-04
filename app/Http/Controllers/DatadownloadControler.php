@@ -15,24 +15,24 @@ class DatadownloadControler extends Controller {
    public function homedisplay()
 {
 
-$slide[0]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal')->where(['category'=>'Android Apps'])->limit(1)->get();
-   $slide[1]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal')->where(['category'=>'Website'])->limit(1)->get();
-   $slide[2]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal')->where(['category'=>'Research'])->limit(1)->get();
-   $slide[3]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal')->where(['category'=>'Robotics'])->limit(1)->get();
-   $slide[4]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal')->where(['category'=>'Web Apps'])->limit(1)->get();
-   $slide[5]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal')->where(['category'=>'Games'])->limit(1)->get();
-   $slide[6]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal')->where(['category'=>'Design & Tech'])->limit(1)->get();
-   $slide[7]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal')->where(['category'=>'Services'])->limit(1)->get();
-   $slide[8]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal')->where(['category'=>'Business Idea'])->limit(1)->get();
-   $slide[9]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal')->where(['category'=>'Electorics'])->limit(1)->get();
-   $slide[10]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal')->where(['category'=>'Networking'])->limit(1)->get();
-   $slide[11]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal')->where(['category'=>'Desktop Softwares'])->limit(1)->get();
+$slide[0]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal','video')->where(['category'=>'Android Apps'])->whereNotNull('video')->limit(1)->get();
+   $slide[1]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal','video')->where(['category'=>'Website'])->whereNotNull('video')->limit(1)->get();
+   $slide[2]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal','video')->where(['category'=>'Research'])->whereNotNull('video')->limit(1)->get();
+   $slide[3]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal','video')->where(['category'=>'Robotics'])->whereNotNull('video')->limit(1)->get();
+   $slide[4]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal','video')->where(['category'=>'Web Apps'])->whereNotNull('video')->limit(1)->get();
+   $slide[5]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal','video')->where(['category'=>'Games'])->whereNotNull('video')->limit(1)->get();
+   $slide[6]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal','video')->where(['category'=>'Design & Tech'])->whereNotNull('video')->limit(1)->get();
+   $slide[7]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal','video')->where(['category'=>'Services'])->whereNotNull('video')->limit(1)->get();
+   $slide[8]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal','video')->where(['category'=>'Business Idea'])->whereNotNull('video')->limit(1)->get();
+   $slide[9]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal','video')->where(['category'=>'Electorics'])->whereNotNull('video')->limit(1)->get();
+   $slide[10]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal','video')->where(['category'=>'Networking'])->whereNotNull('video')->limit(1)->get();
+   $slide[11]=DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal','video')->where(['category'=>'Desktop Softwares'])->whereNotNull('video')->limit(1)->get();
 
 
 
-$data1 = DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal')->orderBy('id', 'asc')->limit(4)->get();
+$data1 = DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal','video')->orderBy('id', 'asc')->whereNotNull('video')->limit(4)->get();
 
-$data2 = DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal')->orderBy('id', 'desc')->limit(4)->get();
+$data2 = DB::table('projects')->select('id','user_id','image','title','blurb','category','duration','goal','video')->orderBy('id', 'desc')->whereNotNull('video')->limit(4)->get();
 
     return view('index')->with( ['data1'=>$data1,'data2'=>$data2,'slide'=>$slide] );
 
@@ -53,6 +53,13 @@ public function showproject(Request $request){
 
 $var=$request->session()->get('dataid');
 $data = DB::table('projects')->select('id','user_id','image','title','blurb','category','subcategory','duration','goal','video')->where(['id'=>$var])->get();
+
+
+if($data[0]->video==null)
+  {$request->session()->put('dataid', $var);
+return redirect('/edit-story');}
+
+
 
 $data2 = DB::table('users')->select('id','first_name','location','picture')->where(['id'=>$data[0]->user_id])->get();
 

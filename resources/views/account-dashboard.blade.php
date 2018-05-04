@@ -47,9 +47,7 @@
       
       
 
-      <li class="nav-item">
-        <a class="nav-link " href="{{url('/account-notifications')}}">Notifications</a>
-      </li>
+      
     
       
       
@@ -61,9 +59,7 @@
       
       
 
-      <li class="nav-item ">
-        <a class="nav-link " href="{{url('/start-project')}}">Create new project</a>
-      </li>
+      
     
 <!--
     <li class="nav-item">
@@ -161,7 +157,7 @@
                             <div class="form-group row">
                                 <label for="example-text-input" class="col-3 col-md-2 col-form-label">Email</label>
                                 <div class="col-9 col-md-10">
-                                    <input class="form-control" type="email" placeholder="firstname@example.com" id="example-text-input">
+                                    <input class="form-control" type="email" placeholder="{{Auth::user()->email}}" id="example-text-input">
                                     <p class="form-text text-muted">
                                         Your name is displayed on your profile.
                                     </p>
@@ -180,15 +176,7 @@
 
                            
                             
-                            <div class="form-group row">
-                                <label for="example-text-input" class="col-3 col-md-2 col-form-label">Current Password</label>
-                                <div class="col-9 col-md-10">
-                                    <input class="form-control" type="password" value="" id="example-text-input">
-                                    <p class="form-text text-muted">
-                                        Enter your current password to save these changes.
-                                    </p>
-                                </div>
-                            </div>
+                            
                             
                             <div class="form-group row">
                                 <div class="col-9 col-md-10">

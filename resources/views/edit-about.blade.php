@@ -113,7 +113,7 @@ $("#fileupload").change(function(){
           <div class="form-group row">
             <label for="example-text-input" class="col-3 col-form-label">Biography</label>
             <div class="col-9">
-                  <textarea class="form-control" name="biography" rows="6" type="text" value="" id="example-email-input"></textarea>
+                  <textarea class="form-control" name="biography" rows="6" type="text" value="" id="example-email-input" maxlength="2000" ></textarea>
 
               <p class="mt-4">Build trust with potential backers by showing there's a real person behind the project. Your name and number of friends will be displayed.</p>
               
@@ -130,7 +130,7 @@ $("#fileupload").change(function(){
                 <span class="input-group-btn">
                   <button class="btn btn-secondary" type="button"><i class="fa fa-location-arrow" aria-hidden="true"></i></button>
                 </span>
-                <input type="text" name="location" class="form-control" placeholder="Search for...">
+                <input type="text" name="location" class="form-control" placeholder="Search for..." maxlength="100">
               </div>              
             </div>
           </div>

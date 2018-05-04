@@ -15,17 +15,19 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('first_name')->nullable();
-            $table->string('last_name')->nullable();
-            $table->string('email')->unique()->nullable();
-            $table->string('password')->nullable();
-            $table->string('picture')->nullable();
-            $table->string('biography')->nullable();
-            $table->string('website')->nullable();
-            $table->string('location')->nullable();
-            $table->string('contact')->nullable();
-            $table->string('accounttype')->nullable();
-            $table->string('accountnumber')->nullable();
+            $table->string('first_name',100)->nullable();
+            $table->string('last_name', 100)->nullable();
+            $table->string('email',100)->unique()->nullable();
+            $table->string('password',100)->nullable();
+            $table->string('picture',100)->nullable()->default("default/profiledefault.png");
+            $table->string('biography',2000)->nullable();
+            $table->string('website',100)->nullable();
+            $table->string('location',100)->nullable();
+            $table->string('contact',100)->nullable();
+            $table->string('accounttype',100)->nullable();
+            $table->string('accountnumber',100)->nullable();
+            $table->string('seson',100)->nullable();
+            $table->string('depertment',100)->nullable();
             $table->string('session')->nullable();
             $table->string('token')->nullable();
             $table->rememberToken();

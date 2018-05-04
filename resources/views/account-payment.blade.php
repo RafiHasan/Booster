@@ -49,9 +49,7 @@
       
       
 
-      <li class="nav-item ">
-        <a class="nav-link " href="{{url('/account-notifications')}}">Notifications</a>
-      </li>
+     
     
       
       

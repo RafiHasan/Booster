@@ -94,7 +94,9 @@
 
               <div  class="info" style="padding-top: 30px;text-align: center; vertical-align: middle;">
                 <h6 id="hidden_profile_uni" style="border-bottom-width:.25px;border-bottom-color:#373a3c;border-bottom-style: groove;">University : SUST</h6>
+
               <h6 id="hidden_profile_dep" style="border-bottom-width:.25px;border-bottom-color:#373a3c;border-bottom-style:groove;">Department : CSE</h6>
+
               <h6 id="hidden_profile_created" style="border-bottom-width:.25px;border-bottom-color:#373a3c;border-bottom-style: groove;">Account created at April 3 2018</h6>
               <h6 id="profile_project_no" style="border-bottom-width:.25px;border-bottom-color:#373a3c;border-bottom-style: groove;">project created: 1</h6>
               <h6 id="profile_project_backed" style="border-bottom-width:.25px;border-bottom-color:#373a3c;border-bottom-style: groove;">project backed: 0</h6>
@@ -146,6 +148,13 @@
           $('#hidden_profile_location').html(data['user'].location);
           $('#hidden_profile_biography').html(data['user'].biography);
           $('#hidden_profile_website').html(data['user'].website);
+
+          $('#hidden_profile_dep').html('Department : '+data['user'].depertment);
+          $('#hidden_profile_created').html('Account created at '+data['user'].created_at);
+          $('#profile_project_no').html('project created: '+data['projects'].length);
+          $('#profile_project_backed').html('');
+
+
           $("#hidden_profile_website").attr("href", data['user'].website);
           $("#hidden_profile_img").attr("src", data['user'].picture);
           console.log("here");

@@ -153,7 +153,8 @@ for($i=0;$i<sizeof($fileupload);$i++)
   DB::table('description')->insertGetId(['project_id'=>$id,'description'=>$description[$i],'image'=>'upload'.'/'.$user_id.$i.$input.'.'.$fileupload[$i]->getClientOriginalExtension()]);
 }
 
-
+if(Auth::user()->biography==null)
+  return redirect('/edit-about');
 
 return redirect('/');
 }

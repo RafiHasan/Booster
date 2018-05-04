@@ -182,7 +182,7 @@ Route::post('/addCard','HomeController@addCard');
 Route::get('/pay','paymentcontroler@pay');
 
 Route::get('/about-us', function () {
-
+    
     return view('about');
 })->name('about');
 

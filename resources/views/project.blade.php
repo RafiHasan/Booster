@@ -34,7 +34,7 @@
 							</div>
 
 							<div class="col-sm-10">
-								<h3>{{$project[0]->title}}</h3>
+								<h3 style="overflow:hidden;">{{$project[0]->title}}</h3>
 								<br />
 								<p class="mb-1">{{$sum =(DB::table('backers')->select('money')->where(['project_id'=>$project[0]->id])->get()->sum('money'))/$project[0]->goal*100}}% funded</p>
 								<div class="progress">
@@ -98,7 +98,7 @@
 								<a class="nav-link active" data-toggle="tab" active" href="#home" role="tab">STORY</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" data-toggle="tab" href="#updates" role="tab">UPDATES (3)</a>
+								<a class="nav-link" data-toggle="tab" href="#updates" role="tab">UPDATES</a>
 							</li>
 							<li class="nav-item">
 								<a onclick="event.preventDefault(); comments({{$user[0]->id}});" class="nav-link" data-toggle="tab" href="#comments" role="tab">COMMENTS </a>
@@ -154,7 +154,7 @@
             <label for="example-text-input" class="col-3 col-form-label">Update title :</label>
             <div class="col-9">
             	<input type="hidden" name="project_id" value="{{$project[0]->id}}">
-                                <input class="form-control"  placeholder="New Update" id="updateTitle" name="updateTitle" required>
+                                <input class="form-control"  placeholder="New Update" id="updateTitle" name="updateTitle" maxlength="100" required>
             </div>
           </div>
         </div>
@@ -164,7 +164,7 @@
           <div class="form-group row">
             <label for="example-text-input" class="col-3 col-form-label">Detail description :</label>
             <div class="col-9">
-                                <textarea id="updateDesc" name="updateDesc" class="form-control form-control-lg" rows="3"></textarea required>
+                                <textarea id="updateDesc" name="updateDesc" class="form-control form-control-lg" rows="3" maxlength="2000" ></textarea required>
                                
             </div>
           </div>
@@ -236,7 +236,7 @@
 											
                                             <input type="hidden" name="project_id" value="{{$project[0]->id}}">
                                             
-											<textarea id="addComment" name="addComment" placeholder="Write your comment here" name="comment" required></textarea>
+											<textarea id="addComment" name="addComment" placeholder="Write your comment here" name="comment" maxlength="1000" required></textarea>
 
 											<div>
 												<img src="{{Auth::user()->picture}}" width="35" alt="Profile of Bradley Jones" title="Bradley Jones" />
@@ -467,7 +467,7 @@ var i;
 
 							<div class="row " >
 								<div class="col-sm-5">
-									<a onclick="event.preventDefault(); document.getElementById('id01').style.display='block';document.getElementById('id01').style.overflow='auto';showProfile({{1}});"  class="nav-link" href="">
+									<a onclick="event.preventDefault(); document.getElementById('id01').style.display='block';document.getElementById('id01').style.overflow='auto';showProfile({{$user[0]->id}});"  class="nav-link" href="">
 										@if($user[0]->picture==null)
 										<img src="{{url('/').'/default/profiledefault.png'}}" class="img-fluid rounded-circle" />
 										@else
@@ -478,7 +478,7 @@ var i;
 								</div>
 								<div class="col-sm-7">
 									<h3 class="mb-0" style="overflow:hidden;" ><strong >{{$user[0]->first_name}}</strong></h3>
-									<p class="mt-0 mb-0">{{$user[0]->location}}</p>
+									<p class="mt-0 mb-0" style="overflow:hidden;">{{$user[0]->location}}</p>
 									<p class="mt-0 mb-0">{{$count = DB::table('projects')->select('id','user_id')->where(['user_id'=>$user[0]->id])->get()->count()}} Project</p>
 									
 								</div>
@@ -491,7 +491,7 @@ var i;
 							<div class="row " ">
 								@foreach($colaborator as $cola)
 								<div class="col-sm-4">
-									<a onclick="event.preventDefault(); document.getElementById('id01').style.display='block';document.getElementById('id01').style.overflow='auto'"  class="nav-link" href="">
+									<a onclick="event.preventDefault(); document.getElementById('id01').style.display='block';document.getElementById('id01').style.overflow='auto';showProfile({{$cola->collab_id}});"  class="nav-link" href="">
 										@if(DB::table('users')->select('id','first_name','location','picture')->where(['id'=>$cola->collab_id])->get()[0]==null)
 										<img src="{{url('/').'/default/profiledefault.png'}}" class="img-fluid rounded-circle" />
 										@else

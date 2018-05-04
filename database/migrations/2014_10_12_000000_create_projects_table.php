@@ -20,16 +20,16 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
             $table->string('user_id');
-            $table->string('image')->nullable();;
-            $table->string('title')->nullable();;
-            $table->string('blurb')->nullable();;
-            $table->string('category')->nullable();;
-            $table->string('subcategory')->nullable();;
-            $table->string('location')->nullable();;
-            $table->string('duration')->nullable();;
-            $table->string('goal')->nullable();;
-            $table->string('video')->nullable();;
-            $table->string('risks')->nullable();;
+            $table->string('image',100)->nullable();;
+            $table->string('title',100)->nullable();;
+            $table->string('blurb',500)->nullable();;
+            $table->string('category',100)->nullable();;
+            $table->string('subcategory',100)->nullable();;
+            $table->string('location',100)->nullable();;
+            $table->string('duration',100)->nullable();;
+            $table->string('goal',100)->nullable();;
+            $table->string('video',100)->nullable();;
+            $table->string('risks',2000)->nullable();;
             $table->timestamps();
         });
 
@@ -37,16 +37,16 @@ class CreateProjectsTable extends Migration
         Schema::create('description', function (Blueprint $table) {
             $table->increments('id');
             $table->string('project_id');
-            $table->string('description')->nullable();;
-            $table->string('image')->nullable();;
+            $table->string('description',2000)->nullable();;
+            $table->string('image',100)->nullable();;
             $table->timestamps();
         });
 
         Schema::create('updates', function (Blueprint $table) {
             $table->increments('id');
             $table->string('project_id');
-            $table->string('title')->nullable();;
-            $table->string('update')->nullable();;
+            $table->string('title',100)->nullable();
+            $table->string('update',2000)->nullable();
             $table->timestamps();
         });
 
@@ -55,6 +55,7 @@ class CreateProjectsTable extends Migration
             $table->string('user_id');
             $table->string('project_id');
             $table->string('collab_id')->nullable();
+            $table->timestamps();
             
         });
 
@@ -62,7 +63,8 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->string('project_id');
             $table->string('user_id');
-            $table->string('comment')->nullable();;
+            $table->string('comment',1000)->nullable();;
+            $table->timestamps();
         });
 
         Schema::create('backers', function (Blueprint $table) {
@@ -70,6 +72,7 @@ class CreateProjectsTable extends Migration
             $table->string('project_id');
             $table->string('user_id');
             $table->string('money')->nullable();;
+            $table->timestamps();
         });
 
 
