@@ -33,7 +33,10 @@ class HomeController extends Controller
 
 
 
-
+   public function showproject()
+   {
+    return view('project');
+   }
 
     /////////////              Ajax Requests              //////////////////////
 

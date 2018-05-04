@@ -12,7 +12,22 @@
 
 	@include('Format.css_js_file')
 
+<?php
+date_default_timezone_set('Asia/Dhaka');
+//Generate Unique Transaction ID
+function rand_string( $length ) {
+     $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";  
+$str="";
+     $size = strlen( $chars );
+     for( $i = 0; $i < $length; $i++ ) {
+          $str .= $chars[ rand( 0, $size - 1 ) ];
+     }
 
+     return $str;
+}
+$cur_random_value=rand_string(10);
+
+?>
 
 </head>
 <body>
@@ -502,10 +517,36 @@ var i;
 								</div>	
 								@endforeach
 							</div>
-							<form method="POST" action="{{ route('pay') }}">
+							<form action="https://secure.aamarpay.com/index.php" method="post" name="form1">
 								{{ csrf_field() }}
+
+<input type="hidden" name="store_id" value=" boosterbd">
+                    <input type="hidden" name="signature_key" value="86ced6c53766abe68e0274094ea9aaa0">
+                   
+                    <input type="hidden" name="tran_id" value="WEP-<?php echo "$cur_random_value"; ?>">
+                    
+                    <input type="hidden" name="currency" value="BDT">
+                    
+                    <input type="hidden" name="cus_name" value="{{Auth::user()->first_name}}">
+                    <input type="hidden" name="cus_email" value="{{Auth::user()->email}}">
+                    
+                    <input type="hidden" name="cus_phone" value="010000000">
+                      
+                    
+                    <input type="hidden" name="desc" value="{{$project[0]->id}}">
+                    <input type="hidden" name="success_url" value="{{url('/')}}/showproject">
+                    <input type="hidden" name="fail_url" value = "{{url('/')}}/showproject">
+                    <input type="hidden" name="cancel_url" value = "{{url('/')}}/showproject">
+
+
+
+
+
+								raqibul
+
+
 								<div>
-								<input type="number" name="money" class="form-control form-control-lg" required>
+								<input type="number" name="amount" class="form-control form-control-lg" required>
 							</div>
 							<div>
 								<input type="submit"  class="btn btn-lg btn-primary btn-block" value="Back this project"></div>

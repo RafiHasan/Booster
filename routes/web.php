@@ -153,6 +153,10 @@ Route::get('/edit-update',function(){
 });
 
 
+
+Route::get('/showproject',function(){
+    return redirect('project');
+});
 Route::post('/edit', ['as'=>'edit','uses'=>'DatauploadControler@basic']);
 
 Route::post('/addComments', ['as'=>'addComments','uses'=>'DatauploadControler@addComments']);
