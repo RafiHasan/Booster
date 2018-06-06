@@ -24,9 +24,9 @@ $cur_random_value=rand_string(10);
   
   
              
-                    <form style='margin:0 auto; text-align:center;' action="https://secure.aamarpay.com/index.php" method="post" name="form1">
+                    <form style='margin:0 auto; text-align:center;' action="https://sandbox.aamarpay.com/index.php" method="post" name="form1">
                     <table border="0" cellpadding="4" cellspacing="2" align="center" style="border-collapse:collapse;">
-                    <input type="hidden" name="store_id" value=" boosterbd">
+                    <input type="hidden" name="store_id" value="boosterbd">
                     <input type="hidden" name="signature_key" value="86ced6c53766abe68e0274094ea9aaa0">
                    
                     </td></tr>

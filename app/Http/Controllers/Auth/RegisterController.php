@@ -72,7 +72,7 @@ class RegisterController extends Controller
             'token' => str_random(25),
         ]);
 
-       // $user->notify(new VeryfyEmail($user));
+        $user->notify(new VeryfyEmail($user));
 
         return $user;
     }

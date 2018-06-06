@@ -520,8 +520,8 @@ var i;
 							<form action="https://secure.aamarpay.com/index.php" method="post" name="form1">
 								{{ csrf_field() }}
 
-<input type="hidden" name="store_id" value=" boosterbd">
-                    <input type="hidden" name="signature_key" value="86ced6c53766abe68e0274094ea9aaa0">
+                    <input type="hidden" name="store_id" value="boosterbd">
+                    <input type="hidden" name="signature_key" value="ff56077f4742e9521e509dfe58eb51a7">
                    
                     <input type="hidden" name="tran_id" value="WEP-<?php echo "$cur_random_value"; ?>">
                     
@@ -535,7 +535,7 @@ var i;
                     
                     <input type="hidden" name="desc" value="{{$project[0]->id}}">
                     <input type="hidden" name="success_url" value="http://www.boosterbd.xyz">
-                    <input type="hidden" name="fail_url" value = "http://www.boosterbd.xyz">
+                    <input type="hidden" name="fail_url" value = "https://www.google.com">
                     <input type="hidden" name="cancel_url" value = "http://www.boosterbd.xyz">
 
 
